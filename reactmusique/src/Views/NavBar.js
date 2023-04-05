@@ -190,6 +190,7 @@ function ResponsiveAppBar() {
                 </Link>
               </MenuItem>
               <MenuItem onClick={handleCloseUserMenu}>
+              </MenuItem>
 
               <MenuItem onClick={handleCloseUserMenu}>
                 <Link to={"/album"}>

@@ -22,7 +22,5 @@ export default function ProfilView() {
             });
     }, []);
     
-    return (
-       console.log(utilisateurs.pseudo)
-        )
+
     }
