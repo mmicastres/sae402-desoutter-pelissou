@@ -185,7 +185,7 @@ function ResponsiveAppBar() {
               onClose={handleCloseUserMenu} // action si fermeture du menu
             >
               <MenuItem onClick={handleCloseUserMenu}>
-              <Link to={"/utilisateurs"}>
+              <Link to={"/inscription"}>
                   <Typography textAlign="center">Connexion</Typography>
                 </Link>
               </MenuItem>
@@ -197,7 +197,7 @@ function ResponsiveAppBar() {
               </MenuItem>
 
               <MenuItem onClick={handleCloseUserMenu}>
-              <Link to={"/inscr"}>
+              <Link to={"/profil"}>
                   <Typography textAlign="center">Profile</Typography>
               </Link>
               </MenuItem>

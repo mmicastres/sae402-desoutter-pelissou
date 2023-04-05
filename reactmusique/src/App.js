@@ -14,6 +14,7 @@ import FormIdent from './Views/FormInscript';
 import FormInscript from './Views/FormInscript';
 import GestionCategorie from './Views/GestionCategories'
 import FormulaireIncription from './components/FormulaireInscription';
+import FormulaireConnexion from './components/FormulaireConnexion';
 
 
 function App() {
@@ -22,13 +23,12 @@ function App() {
       <BrowserRouter>
         <NavBar></NavBar>
         <Routes>
-          <Route path="/utilisateurs" element={<ProfilView />} />
+          <Route path="/profil" element={<ProfilView />} />
           <Route path="/form" element={<ProfilView />} />
           <Route path="/album" element={<Albums />} />
-          <Route path="/inscr" element={<FormulaireIncription />}/>
+          <Route path="/inscription" element={<FormulaireIncription />}/>
+          <Route path="/connexion" element={<FormulaireConnexion />}/>
           <Route path="/categories" element={<GestionCategorie />} />
-          {/* <Route path="/categories" element={<FormInscript />}> */}
-            
         </Routes>
     </BrowserRouter>
     </div>

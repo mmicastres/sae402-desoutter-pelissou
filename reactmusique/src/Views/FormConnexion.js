@@ -19,36 +19,34 @@ import Utilisateurs from '../classes/Utilisateurs'
 
 
 
-export default function FormInscription(props) {
+export default function FormConnexion(props) {
   
   
   const [pseudo, setPseudo] = useState("");
-  const [mail, setMail] = useState("");
   const [mdp, setMdp] = useState("");
 
 
   const HandleChangePseudo = (event) => setPseudo(event.target.value);
-  const HandleChangeMail = (event) => setMail(event.target.value);
   const HandleChangeMdp = (event) => setMdp(event.target.value);
+
 
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    let data = new Utilisateurs(pseudo, mail, mdp);
+    let data = new Utilisateurs(pseudo, mdp);
     console.log(pseudo);
-    console.log(mail);
     console.log(mdp);
 
     props.handler(data);
 
-
-
+    
+    
   }
   
 
 
 
-  
+
   return (
     <Container component="main" maxWidth="xs">
       <Box
@@ -63,7 +61,7 @@ export default function FormInscription(props) {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          S'inscrire
+          Connexion
         </Typography>
         <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
           <Grid container spacing={2}>
@@ -84,43 +82,28 @@ export default function FormInscription(props) {
               <TextField
                 required
                 fullWidth
-                id="email"
-                label="Mail"
-                name="email"
-                type="email"
-                autoComplete="email"
-                onChange={HandleChangeMail}
-                onChangeText={setMail}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                required
-                fullWidth
                 name="password"
                 label="Mot de passe"
                 type="password"
                 id="password"
                 autoComplete="new-password"
+                value={mdp}
                 onChange={HandleChangeMdp}
                 onChangeText={setMdp}
               />
             </Grid>
           </Grid>
-          {/* NE PAS METTRE LE LINK FAIT BUGGER OU ALORS PREVENT DEFAULT LE BUTTON */}
-          {/* <Link to="/"> */}
           <Button
-            type="button"
+            type="submit"
             fullWidth
             variant="contained"
             sx={{ mt: 3, mb: 2 }}
           >
             Valider
           </Button>
-            {/* </Link> */}
           <Grid container justifyContent="flex-end">
-            <Link to="/connexion">
-              <Grid item>Vous avez un compte ? Connexion</Grid>
+            <Link to="/inscription">
+              <Grid item>Vous n'avez pas de compte ? Inscription</Grid>
             </Link>
           </Grid>
         </Box>
