@@ -4,10 +4,10 @@ import { useState, useEffect } from 'react';
 
 
 export default function Albums(){
-    const [lProduits, setLProduits] = useState([])
+    const [lAlbums, setAlbums] = useState([])
     const idfrigo=1
     const url =
-    `https://sae301.alwaysdata.net/api/albums/3`;
+    `https://sae301.alwaysdata.net/api/albums/2`;
 
     function getAlbum(){
         
@@ -20,7 +20,7 @@ export default function Albums(){
             })
             .then((dataJSON) => {
             console.log(dataJSON);
-            setLProduits(dataJSON)
+            setAlbums(dataJSON)
 
             })
             .catch((error) => console.log(error));
@@ -29,6 +29,21 @@ export default function Albums(){
     useEffect(()=> {
         getAlbum()
         }, [])
+
+
+        return(
+        
+            <div>
+                
+                <ul>
+                    
+                    <li>
+                        {lAlbums.titre}
+                    </li>
+                    
+                </ul>
+            </div>
+        )
 
 }
 

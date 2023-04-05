@@ -43,3 +43,10 @@
   align-items: center;
   align-self: center;
 }
+
+.listeTitres{
+  margin-top: 500px;
+  justify-content: center;
+  align-items: center;
+  /* text-align: center; */
+}

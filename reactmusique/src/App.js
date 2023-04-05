@@ -9,6 +9,7 @@ import MaCard from './components/Card';
 import NavBar from './Views/NavBar';
 import ProfilView from './Views/ProfilView';
 import Albums from './components/Album';
+import Titres from './components/Titres';
 
 
 function App() {
@@ -19,11 +20,18 @@ function App() {
       <Routes>
       <Route path="/utilisateurs" element={<ProfilView />} />
       <Route path="/form" element={<ProfilView />}/>
+      <Route path="/album" element={<Albums />}/>
       </Routes>
-      <Button variant="contained">Hello World</Button>
-      <MaCard></MaCard>
+      {/* <Button variant="contained">Hello World</Button> */}
       </BrowserRouter>
       
+      <div className='listeAlbum'>
+        {/* <MaCard></MaCard>
+        <MaCard></MaCard> */}
+      {/* <Albums></Albums> */}
+      {/* <Titres></Titres> */}
+      
+    </div>
     </div>
   );
 }
