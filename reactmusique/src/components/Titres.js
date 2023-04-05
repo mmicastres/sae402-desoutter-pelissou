@@ -33,8 +33,7 @@ export default function Titres(){
     return(
         
 
-        <div className='listeTitres'>
-            <Albums></Albums>
+        <div >
             <ul>
                 {lTitres.map((t)=>
                     <li>
