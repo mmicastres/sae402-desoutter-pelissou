@@ -189,7 +189,6 @@ function ResponsiveAppBar() {
                   <Typography textAlign="center">Connexion</Typography>
                 </Link>
               </MenuItem>
-              </MenuItem>
 
               <MenuItem onClick={handleCloseUserMenu}>
                 <Link to={"/album"}>

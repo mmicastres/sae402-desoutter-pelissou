@@ -46,8 +46,6 @@ export default function FormInscription(props) {
     
   }
   
-  console.log(Connecte);
-  Connecte = true;
 
 
 

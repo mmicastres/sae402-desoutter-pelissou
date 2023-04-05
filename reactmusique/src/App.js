@@ -25,42 +25,12 @@ function App() {
           <Route path="/utilisateurs" element={<ProfilView />} />
           <Route path="/form" element={<ProfilView />} />
           <Route path="/album" element={<Albums />} />
-          <Route path="/form" element={<FormInscript />}/>
+          <Route path="/inscr" element={<FormulaireIncription />}/>
           <Route path="/categories" element={<GestionCategorie />} />
           {/* <Route path="/categories" element={<FormInscript />}> */}
             
         </Routes>
-        {/* <Button variant="contained">Hello World</Button> */}
-      <NavBar></NavBar>
-      <Routes>
-      <Route path="/utilisateurs" element={<ProfilView />} />
-      <Route path="/profil" element={<ProfilView />}/>
-      <Route path="/album" element={<Albums />}/>
-      <Route path="/inscr" element={<FormulaireIncription/>}/>
-      </Routes>
-      {/* <Button variant="contained">Hello World</Button> */}
-      </BrowserRouter>
-
-      <div className='listeAlbum'>
-      
-      {/* <div className='listeAlbum'> */}
-        {/* <MaCard></MaCard>
-        <MaCard></MaCard> */}
-        {/* <Albums></Albums> */}
-        {/* <Titres></Titres> */}
-
-      </div>
-      {/* <Albums></Albums> */}
-      {/* <Titres></Titres> */}
-      
-    {/* </div> */}
-
-      {/* <Button variant="contained">Hello World</Button> */}
-      {/* <div className='listeAlbum'>
-        <MaCard></MaCard>
-        <MaCard></MaCard>
-      <Albums></Albums>
-    </div> */}
+    </BrowserRouter>
     </div>
   );
 }
