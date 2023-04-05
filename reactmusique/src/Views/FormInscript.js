@@ -11,7 +11,7 @@ import Container from "@mui/material/Container";
 
 import { Link } from "react-router-dom";
 
-export default function FormIdent() {
+export default function FormInscript() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -35,22 +35,11 @@ export default function FormIdent() {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          S'identifier
+          S'inscrire
         </Typography>
         <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
           <Grid container spacing={2}>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                autoComplete="given-name"
-                name="firstName"
-                required
-                fullWidth
-                id="firstName"
-                label="Prénom"
-                autoFocus
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12}>
               <TextField
                 required
                 fullWidth
@@ -91,7 +80,7 @@ export default function FormIdent() {
             Valider
           </Button>
           <Grid container justifyContent="flex-end">
-            <Link to="/login">
+            <Link to="/connexion">
               <Grid item>Vous avez un compte ? Connexion</Grid>
             </Link>
           </Grid>
