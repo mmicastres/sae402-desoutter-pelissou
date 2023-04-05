@@ -37,6 +37,23 @@
   }
 }
 
+.Accueil{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 100px;
+}
+.AlbumAccueil{
+  display: flex;
+  flex-direction: row;
+  /* margin: auto; */
+  width: 100%;
+  justify-content: space-evenly;
+
+  
+  
+  /* justify-content: space-between; */
+}
 .listeAlbum{
   display: flex;
   flex-direction: row;

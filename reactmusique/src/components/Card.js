@@ -5,28 +5,30 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { Link } from 'react-router-dom';
 
 
-export default function MaCard() {
-  return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
-        sx={{ height: 140 }}
-        image="https://upload.wikimedia.org/wikipedia/commons/5/54/Poulet_de_chair.jpg"
-        title="green iguana"
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Poulet
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Share</Button>
-      </CardActions>
-    </Card>
-  );
-  }
+export default function MaCard(data) {
+    console.log(data)
+    // console.log(titre)
+    return (
+        <Card sx={{ maxWidth: 345 }}>
+            <CardMedia
+                sx={{ height: 140 }}
+                image={data.pochette}
+                title="green iguana"
+            />
+            <CardContent sx={{ width: 220 }}>
+                <Typography gutterBottom variant="h5" component="div">
+                    {data.titre}
+                </Typography>
+
+            </CardContent>
+            <CardActions>
+                <Link to={`/album/${data.id}`}>
+                    <Button size="small">Voir</Button>
+                </Link>
+            </CardActions>
+        </Card>
+    );
+}

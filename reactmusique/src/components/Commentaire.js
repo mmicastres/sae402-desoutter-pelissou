@@ -4,10 +4,11 @@ import { useState, useEffect } from 'react';
 
 
 
-export default function Commentaires(){
+export default function Commentaires(data){
+    console.log(data.id_album)
     const [lCommentaires, setCommentaire] = useState([])
     const url =
-    `https://sae301.alwaysdata.net/api/albums/2/commentaires`;
+    `https://sae301.alwaysdata.net/api/albums/${data.id_album}/commentaires`;
 
     function getCommentaires(){
         
