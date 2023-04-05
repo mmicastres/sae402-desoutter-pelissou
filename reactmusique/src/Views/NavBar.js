@@ -189,7 +189,6 @@ function ResponsiveAppBar() {
                   <Typography textAlign="center">Connexion</Typography>
                 </Link>
               </MenuItem>
-              <MenuItem onClick={handleCloseUserMenu}>
 
               <MenuItem onClick={handleCloseUserMenu}>
                 <Link to={"/album"}>
@@ -198,11 +197,11 @@ function ResponsiveAppBar() {
               </MenuItem>
 
               <MenuItem onClick={handleCloseUserMenu}>
-              <Link to={"/form"}>
+              <Link to={"/inscr"}>
                   <Typography textAlign="center">Profile</Typography>
-                  </Link>
+              </Link>
               </MenuItem>
-              <MenuItem onClick={handleCloseUserMenu}>
+              {/* <MenuItem onClick={handleCloseUserMenu}>
    
                   <Typography textAlign="center">Account</Typography>
 
@@ -215,7 +214,7 @@ function ResponsiveAppBar() {
               <MenuItem onClick={handleCloseUserMenu}>
                   <Typography textAlign="center">Logout</Typography>
 
-              </MenuItem>
+              </MenuItem> */}
             </Menu>
           </Box>
         </Toolbar>

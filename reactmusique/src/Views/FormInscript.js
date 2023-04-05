@@ -9,17 +9,48 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 
+import {useState, useEffect} from 'react';
+import Connecte from "../Connexion";
+
+
 import { Link } from "react-router-dom";
 
-export default function FormInscript() {
+import Utilisateurs from '../classes/Utilisateurs'
+
+
+
+
+export default function FormInscription(props) {
+  
+  
+  const [pseudo, setPseudo] = useState("");
+  const [mail, setMail] = useState("");
+  const [mdp, setMdp] = useState("");
+
+
+  const HandleChangePseudo = (event) => setPseudo(event.target.value);
+  const HandleChangeMail = (event) => setMail(event.target.value);
+  const HandleChangeMdp = (event) => setMdp(event.target.value);
+
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password")
-    });
-  };
+    let data = new Utilisateurs(pseudo, mail, mdp);
+    console.log(pseudo);
+    console.log(mail);
+    console.log(mdp);
+
+    props.handler(data);
+
+    
+    
+  }
+  
+  console.log(Connecte);
+  Connecte = true;
+
+
+
 
   return (
     <Container component="main" maxWidth="xs">
@@ -43,10 +74,13 @@ export default function FormInscript() {
               <TextField
                 required
                 fullWidth
-                id="lastName"
-                label="Nom"
-                name="lastName"
+                id="pseudo"
+                label="Pseudo"
+                name="pseudo"
                 autoComplete="family-name"
+                value={pseudo}
+                onChange={HandleChangePseudo}
+                onChangeText={setPseudo}
               />
             </Grid>
             <Grid item xs={12}>
@@ -56,7 +90,10 @@ export default function FormInscript() {
                 id="email"
                 label="Mail"
                 name="email"
+                type="email"
                 autoComplete="email"
+                onChange={HandleChangeMail}
+                onChangeText={setMail}
               />
             </Grid>
             <Grid item xs={12}>
@@ -68,9 +105,12 @@ export default function FormInscript() {
                 type="password"
                 id="password"
                 autoComplete="new-password"
+                onChange={HandleChangeMdp}
+                onChangeText={setMdp}
               />
             </Grid>
           </Grid>
+          <Link to="/">
           <Button
             type="submit"
             fullWidth
@@ -79,6 +119,7 @@ export default function FormInscript() {
           >
             Valider
           </Button>
+            </Link>
           <Grid container justifyContent="flex-end">
             <Link to="/connexion">
               <Grid item>Vous avez un compte ? Connexion</Grid>

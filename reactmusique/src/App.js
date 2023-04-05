@@ -10,8 +10,7 @@ import NavBar from './Views/NavBar';
 import ProfilView from './Views/ProfilView';
 import Albums from './components/Album';
 import Titres from './components/Titres';
-import FormIdent from './Views/FormInscript';
-import FormInscript from './Views/FormInscript';
+import FormulaireIncription from './components/FormulaireInscription';
 
 
 function App() {
@@ -21,21 +20,20 @@ function App() {
       <NavBar></NavBar>
       <Routes>
       <Route path="/utilisateurs" element={<ProfilView />} />
-      <Route path="/form" element={<ProfilView />}/>
+      <Route path="/profil" element={<ProfilView />}/>
       <Route path="/album" element={<Albums />}/>
-      <Route path="/form" element={<FormInscript />}>
-      </Route>
+      <Route path="/inscr" element={<FormulaireIncription/>}/>
       </Routes>
       {/* <Button variant="contained">Hello World</Button> */}
       </BrowserRouter>
       
-      <div className='listeAlbum'>
+      {/* <div className='listeAlbum'> */}
         {/* <MaCard></MaCard>
         <MaCard></MaCard> */}
       {/* <Albums></Albums> */}
       {/* <Titres></Titres> */}
       
-    </div>
+    {/* </div> */}
 
       {/* <Button variant="contained">Hello World</Button> */}
       {/* <div className='listeAlbum'>
