@@ -2,6 +2,7 @@
 // import { StyleSheet, Text, View, FlatList, Button } from 'react-native';
 import { useState, useEffect } from 'react';
 import Titres from './Titres';
+import Commentaires from './Commentaire';
 
 export default function Albums(){
     const [lAlbums, setAlbums] = useState([])
@@ -35,8 +36,9 @@ export default function Albums(){
         
             <div className='Album'>
                    
-                 <h2>{lAlbums.titre}</h2>
+                 <h2>Titre album : {lAlbums.titre}</h2>
                  <Titres></Titres>
+                 <Commentaires></Commentaires>
                  
         
             </div>
