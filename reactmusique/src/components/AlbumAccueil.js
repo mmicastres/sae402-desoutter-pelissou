@@ -43,7 +43,7 @@ export default function AlbumAccueil() {
 
 
             {lAlbums.map((t) =>
-                <MaCard src={t.pochette} titre={t.titre}></MaCard>
+                <MaCard id={t.id_album} src={t.pochette} titre={t.titre}></MaCard>
                 // <p>{t.titre}</p>
 
             )}

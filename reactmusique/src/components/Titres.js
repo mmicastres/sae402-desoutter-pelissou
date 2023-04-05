@@ -4,10 +4,11 @@ import { useState, useEffect } from 'react';
 import Albums from './AlbumSpe';
 
 
-export default function Titres(){
+export default function Titres(data){
+    // console.log(data)
     const [lTitres, setTitres] = useState([])
     const url =
-    `https://sae301.alwaysdata.net/api/albums/2/titres`;
+    `https://sae301.alwaysdata.net/api/albums/${data.id_album}/titres`;
 
     function getTitres(){
         

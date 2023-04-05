@@ -3,11 +3,14 @@
 import { useState, useEffect } from 'react';
 import Titres from './Titres';
 import Commentaires from './Commentaire';
+import { Routes, Route, useParams } from 'react-router-dom';
 
 export default function AlbumSpe() {
+    let id = useParams();
+    // console.log(id.id)
     const [lAlbums, setAlbums] = useState([])
     let url =
-        `https://sae301.alwaysdata.net/api/albums/2`;
+        `https://sae301.alwaysdata.net/api/albums/${id.id}`;
 
     function getAlbum() {
 
@@ -39,8 +42,8 @@ export default function AlbumSpe() {
         <div className='Album'>
 
             <h2>Titre album : {lAlbums.titre}</h2>
-            <Titres></Titres>
-            <Commentaires></Commentaires>
+            <Titres id_album={id.id}></Titres>
+            <Commentaires id_album={id.id}></Commentaires>
 
 
         </div>
