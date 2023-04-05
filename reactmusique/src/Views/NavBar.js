@@ -57,7 +57,7 @@ function ResponsiveAppBar() {
                 textDecoration: "none"
               }}
             >
-              Mon Appli
+              Mon Appliiiii
             </Typography>
           {/* menu burger qui s'affiche uniquement si taille écran = md */}
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -103,7 +103,7 @@ function ResponsiveAppBar() {
               </MenuItem>
               <MenuItem onClick={handleCloseNavMenu}>
 
-                  <Typography textAlign="center">Diasdiapo</Typography>
+                  <Typography textAlign="center">Dzerfzuetrfuzeo</Typography>
 
               </MenuItem>
             </Menu>

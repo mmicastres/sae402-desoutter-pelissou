@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  text-align: left;
 }
 
 .App-logo {
@@ -35,4 +35,11 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.listeAlbum{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: center;
 }

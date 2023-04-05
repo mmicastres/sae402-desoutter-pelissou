@@ -8,6 +8,8 @@ import Button from '@mui/material/Button';
 import MaCard from './components/Card';
 import NavBar from './Views/NavBar';
 import ProfilView from './Views/ProfilView';
+import Albums from './components/Album';
+
 
 function App() {
   return (
