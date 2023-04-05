@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -102,7 +103,7 @@ function ResponsiveAppBar() {
               </MenuItem>
               <MenuItem onClick={handleCloseNavMenu}>
 
-                  <Typography textAlign="center">Dzerfzuetrfuzeo</Typography>
+                  <Typography textAlign="center">Diasdiapo</Typography>
 
               </MenuItem>
             </Menu>
@@ -184,9 +185,11 @@ function ResponsiveAppBar() {
               onClose={handleCloseUserMenu} // action si fermeture du menu
             >
               <MenuItem onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">Login</Typography>
+              <Link to={"/utilisateurs"}>
+                  <Typography textAlign="center">Connexion</Typography>
+                </Link>
               </MenuItem>
-              <MenuItem onClick={handleCloseUserMenu}>
+              {/* <MenuItem onClick={handleCloseUserMenu}>
 
                   <Typography textAlign="center">Ident</Typography>
 
@@ -209,7 +212,7 @@ function ResponsiveAppBar() {
               <MenuItem onClick={handleCloseUserMenu}>
                   <Typography textAlign="center">Logout</Typography>
 
-              </MenuItem>
+              </MenuItem> */}
             </Menu>
           </Box>
         </Toolbar>
