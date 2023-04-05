@@ -1,7 +1,7 @@
 
 // import { StyleSheet, Text, View, FlatList, Button } from 'react-native';
 import { useState, useEffect } from 'react';
-import Albums from './Album';
+import Albums from './AlbumSpe';
 
 
 export default function Titres(){

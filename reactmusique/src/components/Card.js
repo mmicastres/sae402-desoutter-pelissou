@@ -7,25 +7,24 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 
-export default function MaCard() {
+export default function MaCard(data) {
+    console.log(data)
+    // console.log(titre)
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
         sx={{ height: 140 }}
-        image="https://upload.wikimedia.org/wikipedia/commons/5/54/Poulet_de_chair.jpg"
+        image={data.pochette}
         title="green iguana"
       />
-      <CardContent>
+      <CardContent sx={{ width: 220 }}>
         <Typography gutterBottom variant="h5" component="div">
-          Poulet
+          {data.titre}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
-        </Typography>
+       
       </CardContent>
       <CardActions>
-        <Button size="small">Share</Button>
+        <Button size="small">Voir</Button>
       </CardActions>
     </Card>
   );
