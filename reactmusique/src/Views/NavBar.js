@@ -191,9 +191,12 @@ function ResponsiveAppBar() {
               </MenuItem>
               <MenuItem onClick={handleCloseUserMenu}>
 
-                  <Typography textAlign="center">Ident</Typography>
-
+              <MenuItem onClick={handleCloseUserMenu}>
+                <Link to={"/album"}>
+                  <Typography textAlign="center">Album</Typography>
+                </Link>
               </MenuItem>
+
               <MenuItem onClick={handleCloseUserMenu}>
               <Link to={"/form"}>
                   <Typography textAlign="center">Profile</Typography>
