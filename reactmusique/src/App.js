@@ -5,7 +5,6 @@ import { Routes, Route, BrowserRouter, Link } from "react-router-dom";
 
 import * as React from 'react';
 import Button from '@mui/material/Button';
-import MaCard from './components/Card';
 import NavBar from './Views/NavBar';
 import ProfilView from './Views/ProfilView';
 import AlbumSpe from './components/AlbumSpe';
@@ -27,7 +26,8 @@ function App() {
           <Route path="/" element={<Accueil />} />
           <Route path="/profil" element={<ProfilView />} />
           <Route path="/form" element={<ProfilView />} />
-          <Route path="/album" element={<Albums />} />
+          {/* <Route path="/album" element={<AlbumSpe />} /> */}
+          <Route path="/album/:id" element={<AlbumSpe />} />
           <Route path="/inscr" element={<FormulaireIncription />}/>
           <Route path="/categories" element={<GestionCategorie />} />
         </Routes>

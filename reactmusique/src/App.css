@@ -62,16 +62,56 @@
 }
 
 .Album{
+  display: flex;
+  flex-direction: column;
   margin-top: 100px;
   justify-content: center;
   align-items: center;
   /* text-align: center; */
   /* text-align: center; */
 }
+.AlbumInfo{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+}
+.AlbumCover{
+  display: flex;
+  width: 40%;
+  background-color: red;
+  /* text-align: center; */
+  /* text-align: center; */
+}
+
 .listeCat{
   margin-top: 100px;
   justify-content: center;
   align-items: center;
   /* text-align: center; */
   /* text-align: center; */
+}
+.listeTitre{
+  justify-content: right;
+  background-color: aquamarine;
+  width: 30%;
+}
+
+.listeCom{
+  width: 100%;
+}
+.listeCom h3{
+  text-align: center;
+}
+.Commentaires{
+  margin: 0;
+  margin: auto;
+  width: 70%;
+  align-items: center;
+  justify-content: center;
+}
+.Commentaire{
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }

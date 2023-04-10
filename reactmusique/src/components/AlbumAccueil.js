@@ -1,7 +1,7 @@
 
 // import { StyleSheet, Text, View, FlatList, Button } from 'react-native';
 import { useState, useEffect } from 'react';
-import MaCard from './Card';
+import MaCard from './AlbumCard';
 
 
 export default function AlbumAccueil() {

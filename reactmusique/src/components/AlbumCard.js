@@ -9,8 +9,8 @@ import { Link } from 'react-router-dom';
 
 
 export default function MaCard(data) {
-    console.log(data)
-    // console.log(titre)
+    // console.log(data)
+    // console.log(data.id)
     return (
         <Card sx={{ maxWidth: 345 }}>
             <CardMedia

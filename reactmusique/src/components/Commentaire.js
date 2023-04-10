@@ -1,51 +1,53 @@
 
 // import { StyleSheet, Text, View, FlatList, Button } from 'react-native';
 import { useState, useEffect } from 'react';
+import CommentaireCard from './CommentaireCard';
 
 
 
-export default function Commentaires(data){
+
+export default function Commentaires(data) {
     console.log(data.id_album)
     const [lCommentaires, setCommentaire] = useState([])
     const url =
-    `https://sae301.alwaysdata.net/api/albums/${data.id_album}/commentaires`;
+        `https://sae301.alwaysdata.net/api/albums/${data.id_album}/commentaires`;
 
-    function getCommentaires(){
-        
-          const fetchOptions = {
+    function getCommentaires() {
+
+        const fetchOptions = {
             method: "GET" // --> DELETE = suppression
-            };
-            fetch(url, fetchOptions)
+        };
+        fetch(url, fetchOptions)
             .then((response) => {
-            return response.json();
+                return response.json();
             })
             .then((dataJSON) => {
-            console.log(dataJSON);
-            setCommentaire(dataJSON)
+                // console.log(dataJSON);
+                setCommentaire(dataJSON)
 
             })
             .catch((error) => console.log(error));
     }
 
-    useEffect(()=> {
+    useEffect(() => {
         getCommentaires()
-        }, [])
+    }, [])
 
-    return(
-        
+    return (
 
-        <div >
-            
-                {lCommentaires.map((t)=>
-                    
-                    <p>Commentaire : {t.commentaire}</p>
-                    
-                )}
-            
+
+        <div className='Commentaires'>
+
+            {lCommentaires.map((c) =>
+
+                <CommentaireCard commentaire={c.commentaire} date={c.date_ajout_com} note={c.note} pseudo={c.pseudo} ></CommentaireCard>
+
+            )}
+
         </div>
     )
 
 }
 
 
-       
+

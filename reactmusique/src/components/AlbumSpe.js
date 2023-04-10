@@ -5,6 +5,7 @@ import Titres from './Titres';
 import Commentaires from './Commentaire';
 import { Routes, Route, useParams } from 'react-router-dom';
 
+
 export default function AlbumSpe() {
     let id = useParams();
     // console.log(id.id)
@@ -22,7 +23,7 @@ export default function AlbumSpe() {
                 return response.json();
             })
             .then((dataJSON) => {
-                console.log(dataJSON);
+                // console.log(dataJSON);
                 setAlbums(dataJSON)
 
             })
@@ -39,11 +40,22 @@ export default function AlbumSpe() {
 
     return (
 
+
         <div className='Album'>
 
             <h2>Titre album : {lAlbums.titre}</h2>
-            <Titres id_album={id.id}></Titres>
-            <Commentaires id_album={id.id}></Commentaires>
+            <div className='AlbumInfo'>
+                <div className='AlbumCover'>
+                    <p>tesy</p>
+                </div>
+                <div className='listeTitre'>
+                    <Titres id_album={id.id}></Titres>
+                </div>
+            </div>
+            <div className='listeCom'>
+                <h3>Commentaires : </h3>
+                <Commentaires id_album={id.id}></Commentaires>
+            </div>
 
 
         </div>

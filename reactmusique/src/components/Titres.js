@@ -2,6 +2,7 @@
 // import { StyleSheet, Text, View, FlatList, Button } from 'react-native';
 import { useState, useEffect } from 'react';
 import Albums from './AlbumSpe';
+import ListDividers from './Divider';
 
 
 export default function Titres(data){
@@ -13,14 +14,14 @@ export default function Titres(data){
     function getTitres(){
         
           const fetchOptions = {
-            method: "GET" // --> DELETE = suppression
+            method: "GET" 
             };
             fetch(url, fetchOptions)
             .then((response) => {
             return response.json();
             })
             .then((dataJSON) => {
-            console.log(dataJSON);
+            // console.log(dataJSON);
             setTitres(dataJSON)
 
             })
@@ -34,14 +35,8 @@ export default function Titres(data){
     return(
         
 
-        <div >
-            <ul>
-                {lTitres.map((t)=>
-                    <li>
-                        {t.titre}
-                    </li>
-                )}
-            </ul>
+        <div className='titreContainer'>
+            <ListDividers listTitre={lTitres}></ListDividers>
         </div>
     )
 
