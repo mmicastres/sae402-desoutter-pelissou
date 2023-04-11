@@ -1,10 +1,11 @@
 import FormConnexion from "../Views/FormConnexion"
 import { useState, useEffect } from 'react';
+import React from "react";
 
 export default function FormulaireConnexion() {
 
     let handlerUtilisateur = (data) => {
-
+        
         let pseudo = data.pseudo;
 
 
@@ -23,12 +24,15 @@ export default function FormulaireConnexion() {
                 return response.json();
             })
             .then((dataJSON) => {
+                const utilisateur = React.createContext(dataJSON.pseudo);
+                const admin = React.createContext(dataJSON.admin);
                 console.log(dataJSON);
 
             })
             .catch((error) => console.log(error));
 
         // FILER LES INFOS 
+        
     }
 
 

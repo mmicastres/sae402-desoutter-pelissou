@@ -8,8 +8,8 @@ import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-
-import {useState, useEffect} from 'react';
+import Divider from '@mui/material/Divider';
+import { useState, useEffect } from 'react';
 
 
 import { Link } from "react-router-dom";
@@ -17,31 +17,32 @@ import { Link } from "react-router-dom";
 import Utilisateurs from '../classes/Utilisateurs'
 import MonBouton from "../components/MonBouton";
 
-export default function Recherche(){
+export default function Recherche() {
 
-    return(
-<div className="BarreRecherche" >
-<Box component="form" noValidate sx={{ mt: 3 }}>
-<div className="ChampRecherche">
-<Grid container spacing={2}>
-  <Grid item xs={6}>
-    <TextField
-      fullWidth
-      id="pseudo"
-      label="Rechercher un artiste, album, titre ..."
-      name="pseudo"
-      autoComplete="family-name"
-      />
-  </Grid>
-</Grid>
-<MonBouton
-contenu={"Valider"}
->
-</MonBouton>
+  return (
+    <div className="BarreRecherche" >
+      <h2>Recherche</h2>
+      <Divider sx={{ width: 3/4 }}></Divider>
+      <Box component="form" noValidate sx={{ mt: 3 }}>
+        <div className="ChampRecherche">
+          <Grid>
+            <Grid>
+              <TextField
+                fullWidth
+                id="recherche"
+                label="Rechercher un artiste, album, titre ..."
+                name="recherche"
+                autoComplete="family-name"
+              />
+            </Grid>
+          </Grid>
+          <div className="divBoutRecherche">
+            <MonBouton contenu={"Valider"}></MonBouton>
+          </div>
+        </div>
+      </Box>
     </div>
-</Box>
-</div>
-)
+  )
 }
 
 
