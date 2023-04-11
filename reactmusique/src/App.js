@@ -32,7 +32,8 @@ function App() {
           <Route path="/form" element={<ProfilView />} />
           <Route path="/album/:id" element={<AlbumSpe />} />
           <Route path="/recherche" element={<Recherche/>} />
-          <Route path="/inscription" element={<FormulaireIncription />}/>
+          <Route path="/login" element={<FormulaireConnexion />}/>
+          <Route path="/inscription" element={<FormulaireIncription/>}/>
           <Route path="/categories" element={<GestionCategorie />} />
           <Route path="/album/:idAlbum/titre/:idTitre" element={<PageTitre />} />
           <Route path="/utilisateur/:pseudo" element={<PageUtilisateur />} />
