@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Titres from '../components/Titres';
 import Commentaires from '../components/Commentaire';
 import { Routes, Route, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 export default function AlbumSpe() {
@@ -23,7 +24,7 @@ export default function AlbumSpe() {
                 return response.json();
             })
             .then((dataJSON) => {
-                // console.log(dataJSON);
+                console.log(dataJSON);
                 setAlbums(dataJSON)
 
             })
@@ -47,6 +48,9 @@ export default function AlbumSpe() {
             <div className='AlbumInfo'>
                 <div className='AlbumCover'>
                     <p>tesy</p>
+                    <Link to={`/utilisateur/${lAlbums.pseudo}`}>
+                        <p>{lAlbums.pseudo}</p>
+                    </Link>
                 </div>
                 <div className='listeTitre'>
                     <Titres id_album={id.id}></Titres>

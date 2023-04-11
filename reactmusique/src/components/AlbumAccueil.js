@@ -5,8 +5,7 @@ import MaCard from './AlbumCard';
 
 
 export default function AlbumAccueil(props) {
-    let max = 100
-    props.handler(max)
+    
     const [lAlbums, setAlbums] = useState([])
     let url =
         `https://sae301.alwaysdata.net/api/accueil`;
@@ -21,11 +20,11 @@ export default function AlbumAccueil(props) {
                 return response.json();
             })
             .then((dataJSON) => {
-                // let max = dataJSON.length
-                console.log(dataJSON);
                 setAlbums(dataJSON)
-                // props.handler(max)
-
+                let max = dataJSON.length;
+                let r = Math.floor(Math.random() * max);
+                let rand = dataJSON[r].id_album;
+                props.handler(rand);
 
             })
             .catch((error) => console.log(error));

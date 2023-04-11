@@ -6,8 +6,7 @@ import { useState, useEffect } from 'react';
 
 export default function Accueil() {
     const [nbrRand, setRand] = useState("");
-    let maxAlbumHandler = (max) => {
-        let rand = Math.floor(Math.random() * max);
+    let maxAlbumHandler = (rand) => {
         setRand(rand)
     }
     

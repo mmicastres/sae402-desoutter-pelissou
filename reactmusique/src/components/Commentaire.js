@@ -7,12 +7,12 @@ import CommentaireCard from './CommentaireCard';
 
 
 export default function Commentaires(data) {
-    console.log(data.id_album)
+    // console.log(data.id_album)
     const [lCommentaires, setCommentaire] = useState([])
-    const url =
-        `https://sae301.alwaysdata.net/api/albums/${data.id_album}/commentaires`;
 
     function getCommentaires() {
+        const url =
+            `https://sae301.alwaysdata.net/api/albums/${data.id_album}/commentaires`;
 
         const fetchOptions = {
             method: "GET" // --> DELETE = suppression
@@ -29,8 +29,32 @@ export default function Commentaires(data) {
             .catch((error) => console.log(error));
     }
 
+        useEffect(() => {
+            getCommentaires()
+        }, [])
+
+    
+
+    function getCommentairesUtilisateur() {
+        const url =
+            `https://sae301.alwaysdata.net/api/utilisateurs/${data.pseudo}/commentaires`;
+        const fetchOptions = {
+            method: "GET" // --> DELETE = suppression
+        };
+        fetch(url, fetchOptions)
+            .then((response) => {
+                return response.json();
+            })
+            .then((dataJSON) => {
+                // console.log(dataJSON);
+                setCommentaire(dataJSON)
+
+            })
+            .catch((error) => console.log(error));
+    }
+
     useEffect(() => {
-        getCommentaires()
+        getCommentairesUtilisateur()
     }, [])
 
     return (

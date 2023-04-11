@@ -30,7 +30,7 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
     }),
 }));
 
-export default function UtilisateurCard() {
+export default function UtilisateurCard(data) {
     const test = React.createContext("admin");
     console.log(test._currentValue)
     const [expanded, setExpanded] = React.useState(false);
@@ -58,8 +58,8 @@ export default function UtilisateurCard() {
                             <MoreVertIcon />
                           </IconButton>
                         }
-                        title="Pseudo"
-                        subheader="20/01/2023"
+                        title={data.pseudo}
+                        subheader={data.date}
                     />
                 </Card>
             </div>
