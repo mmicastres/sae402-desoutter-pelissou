@@ -8,6 +8,6 @@ export default function MonBouton(data){
     };
 
     return(
-        <Button sx={styleBout} className="BoutAleatoire" variant="contained">{data.contenu}</Button>
+        <Button sx={styleBout} variant="contained">{data.contenu}</Button>
     )
 }
