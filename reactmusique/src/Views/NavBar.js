@@ -161,7 +161,8 @@ function ResponsiveAppBar() {
             <Tooltip title="Profil">
               {/* icone pour ouvrir le menu */}
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="" src="/broken-image.jpg" />
+                {/* <Avatar alt="" src="/broken-image.jpg" /> */}
+                <Avatar alt="" src="https://www.netcost-security.fr/wp-content/uploads/2021/11/1636044306_Lhistoire-de-GigaChad-lultra-masculin-mi-meme-mi-legende-urbaine.jpg" />
               </IconButton>
             </Tooltip>
             {/* le menu avec ses options */}

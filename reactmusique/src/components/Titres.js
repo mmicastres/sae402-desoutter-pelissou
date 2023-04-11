@@ -1,7 +1,7 @@
 
 // import { StyleSheet, Text, View, FlatList, Button } from 'react-native';
 import { useState, useEffect } from 'react';
-import Albums from './AlbumSpe';
+import Albums from '../Views/AlbumSpe';
 import ListDividers from './Divider';
 
 

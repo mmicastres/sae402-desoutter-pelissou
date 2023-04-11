@@ -1,8 +1,8 @@
 
 // import { StyleSheet, Text, View, FlatList, Button } from 'react-native';
 import { useState, useEffect } from 'react';
-import Titres from './Titres';
-import Commentaires from './Commentaire';
+import Titres from '../components/Titres';
+import Commentaires from '../components/Commentaire';
 import { Routes, Route, useParams } from 'react-router-dom';
 
 

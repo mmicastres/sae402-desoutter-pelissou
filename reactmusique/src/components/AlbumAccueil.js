@@ -12,20 +12,20 @@ export default function AlbumAccueil(props) {
         `https://sae301.alwaysdata.net/api/accueil`;
 
     function AlbumAccueil() {
-    
+
         const fetchOptions = {
             method: "GET" // --> DELETE = suppression
         };
         fetch(url, fetchOptions)
-        .then((response) => {
-            return response.json();
-        })
-        .then((dataJSON) => {
-            // let max = dataJSON.length
-            console.log(dataJSON);
-            setAlbums(dataJSON)
-            // props.handler(max)
-                
+            .then((response) => {
+                return response.json();
+            })
+            .then((dataJSON) => {
+                // let max = dataJSON.length
+                console.log(dataJSON);
+                setAlbums(dataJSON)
+                // props.handler(max)
+
 
             })
             .catch((error) => console.log(error));
@@ -35,24 +35,14 @@ export default function AlbumAccueil(props) {
         AlbumAccueil()
     }, [])
 
-    
+
 
     return (
 
         <div className='AlbumAccueil'>
-
-            {/* <h2>Titre album : {lAlbums.titre}</h2>
-                 <Titres></Titres>
-                 <Commentaires></Commentaires> */}
-
-
             {lAlbums.map((t) =>
                 <MaCard id={t.id_album} src={t.pochette} titre={t.titre}></MaCard>
-                // <p>{t.titre}</p>
-
             )}
-
-
         </div>
     )
 
