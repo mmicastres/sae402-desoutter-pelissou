@@ -2,7 +2,7 @@ import FormAjoutTitre from "../Views/FormAjoutTitre"
 import { Routes, Route, useParams } from 'react-router-dom';
 
 
-export default function FormulaireIncription(){
+export default function FormulaireAjoutTitre(){
     let id = useParams();
 
     console.log(id.idAlbum);
