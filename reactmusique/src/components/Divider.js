@@ -3,6 +3,7 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
+import { Link } from 'react-router-dom';
 
 const style = {
     width: '100%',
@@ -13,17 +14,19 @@ const style = {
 export default function ListDividers(data) {
     // console.log(data.listTitre[0].titre)
     return (
-        <div> 
+        <div>
             <p>Titres :</p>
             {data.listTitre.map((t) =>
-                <List component="nav" aria-label="mailbox folders">
-                
+                <Link to={`/album/${t.id_album}/titre/${t.id_titre}`}>
+                    <List component="nav" aria-label="mailbox folders">
 
-                    <ListItem button>
-                        <ListItemText primary={t.titre} />
-                    </ListItem>
-                    <Divider />
-                </List>
+
+                        <ListItem button>
+                            <ListItemText primary={t.titre} />
+                        </ListItem>
+                        <Divider />
+                    </List>
+                </Link>
             )}
         </div>
 

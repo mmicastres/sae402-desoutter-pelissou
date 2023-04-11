@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Albums from '../Views/AlbumSpe';
 import ListDividers from './Divider';
+import { Link } from 'react-router-dom';
 
 
 export default function Titres(data){
@@ -32,11 +33,13 @@ export default function Titres(data){
         getTitres()
         }, [])
 
+        // console.log(lTitres[0].id_album);
+
     return(
         
 
         <div className='titreContainer'>
-            <ListDividers listTitre={lTitres}></ListDividers>
+                <ListDividers listTitre={lTitres}></ListDividers>
         </div>
     )
 

@@ -8,9 +8,9 @@ export default function PageTitre() {
 
     const [leTitre, setTitre] = useState([])
     let url =
-        `https://sae301.alwaysdata.net/api/albums/${id.idAlbum}/titre/${id.idTitre}`;
+        `https://sae301.alwaysdata.net/api/titres/${id.idTitre}`;
 
-    function getAlbum() {
+    function getTitre() {
 
         const fetchOptions = {
             method: "GET" // --> DELETE = suppression
@@ -20,7 +20,7 @@ export default function PageTitre() {
                 return response.json();
             })
             .then((dataJSON) => {
-                // console.log(dataJSON);
+                console.log(dataJSON);
                 setTitre(dataJSON)
 
             })
@@ -30,14 +30,16 @@ export default function PageTitre() {
     }
 
     useEffect(() => {
-        getAlbum()
+        getTitre()
     }, [])
+
     return (
         <div className='PageTitre'>
-            <h2>Le titre : {leTitre}</h2>
+            <h2>Le titre : {leTitre.titre}</h2>
             <img src="https://www.netcost-security.fr/wp-content/uploads/2021/11/1636044306_Lhistoire-de-GigaChad-lultra-masculin-mi-meme-mi-legende-urbaine.jpg"></img>
+            {/* Composant Anecdote */}
             <h2>L'annecdote</h2>
-            <h2>Les paroles : </h2>
+            <h2>Les paroles : {leTitre.paroles}</h2>
         </div>
     )
 }

@@ -22,7 +22,7 @@ export default function PageUtilisateur(){
                 return response.json();
             })
             .then((dataJSON) => {
-                // console.log(dataJSON);
+                console.log(dataJSON);
                 setUtilisateur(dataJSON)
 
             })
