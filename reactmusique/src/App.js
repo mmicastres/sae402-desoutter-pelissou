@@ -26,9 +26,8 @@ function App() {
           <Route path="/" element={<Accueil />} />
           <Route path="/profil" element={<ProfilView />} />
           <Route path="/form" element={<ProfilView />} />
-          {/* <Route path="/album" element={<AlbumSpe />} /> */}
           <Route path="/album/:id" element={<AlbumSpe />} />
-          <Route path="/inscr" element={<FormulaireIncription />}/>
+          <Route path="/utilisateur" element={<FormulaireIncription />}/>
           <Route path="/categories" element={<GestionCategorie />} />
         </Routes>
     </BrowserRouter>

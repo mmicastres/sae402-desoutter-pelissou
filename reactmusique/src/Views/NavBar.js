@@ -41,7 +41,9 @@ function ResponsiveAppBar() {
         <Toolbar disableGutters>
           {/* ==========  icone android à gauche 
                   s'affiche uniquement si taille écran = md */}
+          <Link to={"/"}>
           <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          </Link>
           {/* ==========  libellé à gauche qui
                   s'affiche uniquement si taille écran = md */}
             <Typography
@@ -56,8 +58,8 @@ function ResponsiveAppBar() {
                 color: "inherit",
                 textDecoration: "none"
               }}
-            >
-              Mon Appliiiii
+              >
+              Spotify.v2
             </Typography>
           {/* menu burger qui s'affiche uniquement si taille écran = md */}
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -93,17 +95,12 @@ function ResponsiveAppBar() {
             >
               <MenuItem onClick={handleCloseNavMenu}>
 
-                  <Typography textAlign="center">Produits</Typography>
+                  <Typography textAlign="center">Accueil</Typography>
 
               </MenuItem>
               <MenuItem onClick={handleCloseNavMenu}>
  
-                  <Typography textAlign="center">Prix</Typography>
-
-              </MenuItem>
-              <MenuItem onClick={handleCloseNavMenu}>
-
-                  <Typography textAlign="center">Dzerfzuetrfuzeo</Typography>
+                  <Typography textAlign="center">Recherche</Typography>
 
               </MenuItem>
             </Menu>
@@ -127,7 +124,7 @@ function ResponsiveAppBar() {
               textDecoration: "none"
             }}
           >
-            Mon appli
+            Spotify.v2
           </Typography>
           {/* ==========  menu de gauche mais affiché dans la navbar
              si la taille de l'écran est assez grande = md */}
@@ -136,7 +133,7 @@ function ResponsiveAppBar() {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                Produits
+                Accueil
               </Button>
 
 
@@ -144,16 +141,9 @@ function ResponsiveAppBar() {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                Prix
+                Recherche
               </Button>
 
-
-              <Button
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                Dispo
-              </Button>
 
           </Box>
           {/* ==========  menu profil user à droite 
@@ -190,11 +180,6 @@ function ResponsiveAppBar() {
                 </Link>
               </MenuItem>
 
-              <MenuItem onClick={handleCloseUserMenu}>
-                <Link to={"/album"}>
-                  <Typography textAlign="center">Album</Typography>
-                </Link>
-              </MenuItem>
 
               <MenuItem onClick={handleCloseUserMenu}>
               <Link to={"/profil"}>
