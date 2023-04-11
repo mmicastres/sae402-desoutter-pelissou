@@ -8,10 +8,10 @@ export default function FormulaireConnexion() {
 
     
     let handlerUtilisateur = (data) => {
-        let pseudo = data.pseudo;
+        console.log(data.pseudo);
+        console.log(data.mdp);
 
-
-        const url = `https://sae301.alwaysdata.net/api/utilisateurs/${pseudo}`;
+        const url = `https://sae301.alwaysdata.net/api/connexion`;
 
         let myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");

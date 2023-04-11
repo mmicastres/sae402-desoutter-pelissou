@@ -33,14 +33,9 @@ export default function FormConnexion(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    let data = new Utilisateurs(pseudo, mdp);
-    console.log(pseudo);
-    console.log(mdp);
-
+    let data = new Utilisateurs(pseudo,null, mdp);
     props.handler(data);
-
-    
-    
+    console.log(data);
   }
   
 
