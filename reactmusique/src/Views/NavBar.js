@@ -94,14 +94,14 @@ function ResponsiveAppBar() {
               }}
             >
               <MenuItem onClick={handleCloseNavMenu}>
-
+                <Link to={"/"}>
                   <Typography textAlign="center">Accueil</Typography>
-
+                  </Link>
               </MenuItem>
               <MenuItem onClick={handleCloseNavMenu}>
- 
+                  <Link to={"/recherche"}>
                   <Typography textAlign="center">Recherche</Typography>
-
+                  </Link>
               </MenuItem>
             </Menu>
           </Box>
@@ -129,20 +129,22 @@ function ResponsiveAppBar() {
           {/* ==========  menu de gauche mais affiché dans la navbar
              si la taille de l'écran est assez grande = md */}
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+              <Link to={"/"}>
               <Button
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
                 Accueil
               </Button>
-
-
+              </Link>
+              <Link to={"/recherche"}>
               <Button
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
                 Recherche
               </Button>
+              </Link>
 
 
           </Box>
