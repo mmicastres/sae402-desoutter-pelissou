@@ -7,46 +7,29 @@ import CommentaireCard from './CommentaireCard';
 
 
 export default function Commentaires(data) {
-    // console.log(data.id_album)
+    // console.log(data)
     const [lCommentaires, setCommentaire] = useState([])
 
     function getCommentaires() {
-        const url =
-            `https://sae301.alwaysdata.net/api/albums/${data.id_album}/commentaires`;
+        let url = "";
+        if (data.id_album != undefined) {
+            // console.log('ID ALBUM', data.id_album)
+            url += `https://sae301.alwaysdata.net/api/albums/${data.id_album}/commentaires`;
+        }
+        else if (data.pseudo != undefined) {
+            // console.log('PSEUDO', data.pseudo)
+            url += `https://sae301.alwaysdata.net/api/utilisateurs/${data.pseudo}/commentaires`;
+        }
 
         const fetchOptions = {
-            method: "GET" // --> DELETE = suppression
+            method: "GET" 
         };
         fetch(url, fetchOptions)
             .then((response) => {
                 return response.json();
             })
             .then((dataJSON) => {
-                // console.log(dataJSON);
-                setCommentaire(dataJSON)
-
-            })
-            .catch((error) => console.log(error));
-    }
-
-        useEffect(() => {
-            getCommentaires()
-        }, [])
-
-    
-
-    function getCommentairesUtilisateur() {
-        const url =
-            `https://sae301.alwaysdata.net/api/utilisateurs/${data.pseudo}/commentaires`;
-        const fetchOptions = {
-            method: "GET" // --> DELETE = suppression
-        };
-        fetch(url, fetchOptions)
-            .then((response) => {
-                return response.json();
-            })
-            .then((dataJSON) => {
-                // console.log(dataJSON);
+                console.log(dataJSON);
                 setCommentaire(dataJSON)
 
             })
@@ -54,7 +37,7 @@ export default function Commentaires(data) {
     }
 
     useEffect(() => {
-        getCommentairesUtilisateur()
+        getCommentaires()
     }, [])
 
     return (

@@ -24,7 +24,7 @@ export default function AlbumSpe() {
                 return response.json();
             })
             .then((dataJSON) => {
-                console.log(dataJSON);
+                // console.log(dataJSON);
                 setAlbums(dataJSON)
 
             })
