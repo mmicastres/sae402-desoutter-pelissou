@@ -1,6 +1,7 @@
 
 // import { StyleSheet, Text, View, FlatList, Button } from 'react-native';
 import { useState, useEffect } from 'react';
+import CategorieCard from './CategorieCard';
 
 
 
@@ -35,9 +36,10 @@ export default function Categories(){
 
         <div >
             
-                {lCategorie.map((t)=>
+                {lCategorie.map((c)=>
                     
-                    <p>{t.nom_categorie}</p>
+                    <CategorieCard cat = {c.nom_categorie}></CategorieCard>
+                    // <p>{t.nom_categorie}</p>
                     
                 )}
             

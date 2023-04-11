@@ -10,6 +10,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Divider from '@mui/material/Divider';
 import { useState, useEffect } from 'react';
+import Categories from "../components/Categorie";
 
 
 import { Link } from "react-router-dom";
@@ -42,6 +43,7 @@ export default function Recherche() {
           </div>
         </div>
       </Box>
+      <Categories></Categories>
     </div>
   )
 }
