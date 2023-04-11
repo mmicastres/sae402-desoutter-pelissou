@@ -16,6 +16,11 @@ import AdbIcon from "@mui/icons-material/Adb";
 
 
 function ResponsiveAppBar() {
+  const navStyle = {
+    
+    backgroundColor: "rgba(103, 80, 164, 1)"
+};
+
   // === gestion menu de gauche (burger ou liste suivant la taille)
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   // -- afficher le menu à la position de la cible de l'event
@@ -36,7 +41,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="fixed">
+    <AppBar sx={navStyle} position="fixed">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* ==========  icone android à gauche 

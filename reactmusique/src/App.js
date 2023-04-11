@@ -18,6 +18,7 @@ import FormulaireConnexion from './components/FormulaireConnexion';
 import Recherche from './Views/Recherche';
 
 
+// Hello World function
 function App() {
   return (
     <div className="App">

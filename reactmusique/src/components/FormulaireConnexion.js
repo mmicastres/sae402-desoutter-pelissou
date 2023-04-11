@@ -2,6 +2,8 @@ import FormConnexion from "../Views/FormConnexion"
 import { useState, useEffect } from 'react';
 import React from "react";
 
+
+// Connexion form request function
 export default function FormulaireConnexion() {
 
     

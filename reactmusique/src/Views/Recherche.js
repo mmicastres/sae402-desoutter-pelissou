@@ -17,12 +17,13 @@ import { Link } from "react-router-dom";
 import Utilisateurs from '../classes/Utilisateurs'
 import MonBouton from "../components/MonBouton";
 
+// Search artist, album, title function
 export default function Recherche() {
 
   return (
     <div className="BarreRecherche" >
       <h2>Recherche</h2>
-      <Divider sx={{ width: 3/4 }}></Divider>
+      <Divider sx={{ width: 3 / 4 }}></Divider>
       <Box component="form" noValidate sx={{ mt: 3 }}>
         <div className="ChampRecherche">
           <Grid>
@@ -44,30 +45,3 @@ export default function Recherche() {
     </div>
   )
 }
-
-
-// import { useState } from "react";
-// import IconButton from "@mui/material/IconButton";
-// import SearchIcon from "@mui/icons-material/Search";
-// import TextField from "@mui/material/TextField";
-
-// export default function Recherche() {
-//     return (
-//         <div className="BarreRecherche">
-//             <h1>Recherche</h1>
-//             <form>
-//                 <Grid container spacing={2}>
-//                     <Grid item xs={6}>
-//                         <TextField
-//                             fullWidth
-//                             id="pseudo"
-//                             label="Rechercher un artiste, album, titre ..."
-//                             name="pseudo"
-//                             autoComplete="family-name"
-//                         />
-//                     </Grid>
-//                 </Grid>
-//             </form>
-//         </div>
-//     )
-// }

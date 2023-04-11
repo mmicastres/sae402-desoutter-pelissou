@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 import { useState, useEffect } from 'react';
 
 export default function Accueil() {
-    const [nbrRand, setRand] = useState("")
+    const [nbrRand, setRand] = useState("");
     let maxAlbumHandler = (max) => {
         let rand = Math.floor(Math.random() * max);
         setRand(rand)

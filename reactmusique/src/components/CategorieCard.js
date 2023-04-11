@@ -8,9 +8,8 @@ import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
 
 
+// Card composant from
 export default function CategorieCard(data) {
-    // console.log(data)
-    // console.log(data.id)
     return (
         <Card sx={{ maxWidth: 345 }}>
             <CardMedia
