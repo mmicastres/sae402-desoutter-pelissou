@@ -1,9 +1,14 @@
-import FormAjoutAlbum from "../Views/FormAjoutAlbum"
+import FormAjoutTitre from "../Views/FormAjoutTitre"
+import { Routes, Route, useParams } from 'react-router-dom';
 
-export default function FormulaireAjoutAlbum(){
+
+export default function FormulaireAjoutTitre(){
+    let id = useParams();
+
+    console.log(id.idAlbum);
 
     let handlerUtilisateur = (data) =>{
-        const url = `https://sae301.alwaysdata.net/api/albums`;
+        const url = `https://sae301.alwaysdata.net/api/artistes/${id.Pseudo}/albums/${id.idAlbum}/titres`;
 
         
         let myHeaders = new Headers();
@@ -27,7 +32,7 @@ export default function FormulaireAjoutAlbum(){
 
     return(
         <div className="FormulaireConnexion">
-        <FormAjoutAlbum handler={handlerUtilisateur} ></FormAjoutAlbum>
+        <FormAjoutTitre handler={handlerUtilisateur} ></FormAjoutTitre>
         </div>
     )
 }
