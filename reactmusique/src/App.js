@@ -15,6 +15,7 @@ import Accueil from './Views/Accueil';
 import GestionCategorie from './Views/GestionCategories'
 import FormulaireIncription from './components/FormulaireInscription';
 import FormulaireConnexion from './components/FormulaireConnexion';
+import Recherche from './Views/Recherche';
 
 
 function App() {
@@ -27,7 +28,8 @@ function App() {
           <Route path="/profil" element={<ProfilView />} />
           <Route path="/form" element={<ProfilView />} />
           <Route path="/album/:id" element={<AlbumSpe />} />
-          <Route path="/utilisateur" element={<FormulaireIncription />}/>
+          <Route path="/recherche" element={<Recherche/>} />
+          <Route path="/inscription" element={<FormulaireIncription />}/>
           <Route path="/categories" element={<GestionCategorie />} />
         </Routes>
     </BrowserRouter>
