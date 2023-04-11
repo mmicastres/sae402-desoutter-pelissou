@@ -4,8 +4,8 @@ import React from "react";
 
 export default function FormulaireConnexion() {
 
+    
     let handlerUtilisateur = (data) => {
-        
         let pseudo = data.pseudo;
 
 
@@ -31,8 +31,14 @@ export default function FormulaireConnexion() {
             })
             .catch((error) => console.log(error));
 
-        // FILER LES INFOS 
+            window.location.replace(
+                "/"
+              );
         
+        
+        
+
+
     }
 
 
