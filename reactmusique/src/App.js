@@ -16,6 +16,7 @@ import FormulaireConnexion from './components/FormulaireConnexion';
 import FormulaireAjoutAlbum from './components/FormulaireAjoutAlbum';
 import FormulaireAjoutTitre from './components/FormulaireAjoutTitre';
 import FormulaireAjoutAnecdote from './components/FormulaireAjoutAnecdote';
+import FormulaireAjoutCom from './components/FormulaireAjoutCom';
 import Recherche from './Views/Recherche';
 import PageTitre from './Views/PageTitre';
 import PageUtilisateur from './Views/PageUtilisateur';
@@ -41,6 +42,7 @@ function App() {
           <Route path="/album/:idAlbum/titre/:idTitre" element={<PageTitre />} />
           <Route path="/artiste/:Pseudo/albums/:idAlbum" element={<FormulaireAjoutTitre />} />
           <Route path="/artistes/:Pseudo/titres/:idTitre/anecdotes" element={<FormulaireAjoutAnecdote />} />
+          <Route path="/albums/:idAlbum/commentaires" element={<FormulaireAjoutCom/>}/>
           <Route path="/utilisateur/:pseudo" element={<PageUtilisateur />} />
           <Route path="/form-ajout-album" element={<FormulaireAjoutAlbum/>}/> 
         </Routes>
