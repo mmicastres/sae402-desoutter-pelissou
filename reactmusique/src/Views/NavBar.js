@@ -190,7 +190,7 @@ function ResponsiveAppBar() {
 
 
               <MenuItem onClick={handleCloseUserMenu}>
-              <Link to={"/login"}>
+              <Link to={"/form-ajout-album"}>
                   <Typography textAlign="center">Profil</Typography>
               </Link>
               </MenuItem>

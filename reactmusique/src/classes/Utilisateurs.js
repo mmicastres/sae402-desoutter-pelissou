@@ -1,4 +1,4 @@
-export default class Produit {
+export default class Utilisateurs {
     constructor(pseudo,mail, mdp) {
     this._pseudo = pseudo;
     this._mail = mail;
