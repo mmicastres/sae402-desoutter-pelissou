@@ -26,7 +26,7 @@ function App() {
         <NavBar></NavBar>
         <Routes>
           <Route path="/" element={<Accueil />} />
-          <Route path="/profil" element={<ProfilView />} />
+          <Route path="/login" element={<ProfilView />} />
           <Route path="/form" element={<ProfilView />} />
           <Route path="/album/:id" element={<AlbumSpe />} />
           <Route path="/recherche" element={<Recherche/>} />

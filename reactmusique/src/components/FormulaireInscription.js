@@ -26,6 +26,8 @@ export default function FormulaireIncription(){
     };
 
     return(
+        <div className="FormulaireConnexion">
         <FormInscription handler={handlerUtilisateur} ></FormInscription>
+        </div>
     )
 }
