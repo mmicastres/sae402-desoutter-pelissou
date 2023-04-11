@@ -37,11 +37,25 @@
   }
 }
 
+
+.Button {
+  color: black;
+}
+
 .Accueil{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
   margin-top: 100px;
+  align-items: center;
+}
+.BoutAleatoire{
+  width: 10%;
+  margin: auto;
+  background-color: red;
+}
+.BoutAleatoire:hover{
+  background-color: red;
 }
 .AlbumAccueil{
   display: flex;
@@ -64,7 +78,7 @@
 .Album{
   display: flex;
   flex-direction: column;
-  margin-top: 100px;
+  margin-top: 15%;
   justify-content: center;
   align-items: center;
   /* text-align: center; */
