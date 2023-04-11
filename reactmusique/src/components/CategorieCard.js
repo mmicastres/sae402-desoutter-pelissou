@@ -11,11 +11,12 @@ import { Link } from 'react-router-dom';
 // Card composant from
 export default function CategorieCard(data) {
     return (
+
         <Card sx={{ maxWidth: 345 }}>
             <CardMedia
                 sx={{ height: 140 }}
-                image={data.pochette}
-                title="green iguana"
+                image="https://3dwarehouse.sketchup.com/warehouse/v1.0/content/public/82b7b249-4b20-4769-beac-09d13a318a7c"
+                title= {data.cat}
             />
             <CardContent sx={{ width: 220 }}>
                 <Typography gutterBottom variant="h5" component="div">
@@ -24,7 +25,7 @@ export default function CategorieCard(data) {
 
             </CardContent>
             <CardActions>
-                <Link to={`/album/${data.id}`}>
+                <Link to={`/categories/${data.cat}/albums`}>
                     <Button size="small">Voir</Button>
                 </Link>
             </CardActions>

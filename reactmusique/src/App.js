@@ -19,6 +19,7 @@ import FormulaireAjoutAnecdote from './components/FormulaireAjoutAnecdote';
 import Recherche from './Views/Recherche';
 import PageTitre from './Views/PageTitre';
 import PageUtilisateur from './Views/PageUtilisateur';
+import AlbumParCategorie from './Views/RechercheParCategorie';
 
 
 // Hello World function
@@ -36,6 +37,7 @@ function App() {
           <Route path="/login" element={<FormulaireConnexion />}/>
           <Route path="/inscription" element={<FormulaireIncription/>}/>
           <Route path="/categories" element={<GestionCategorie />} />
+          <Route path="/categories/:nomCat/albums" element={<AlbumParCategorie />} />
           <Route path="/album/:idAlbum/titre/:idTitre" element={<PageTitre />} />
           <Route path="/artiste/:Pseudo/albums/:idAlbum" element={<FormulaireAjoutTitre />} />
           <Route path="/artistes/:Pseudo/titres/:idTitre/anecdotes" element={<FormulaireAjoutAnecdote />} />

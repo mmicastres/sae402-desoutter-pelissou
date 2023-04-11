@@ -24,7 +24,6 @@ export default function RechercheForm(props) {
     };
     return (
         <div className="BarreRecherche" >
-            <Divider sx={{ width: 3 / 4 }}></Divider>
             <Box onSubmit={handleSubmit} component="form" noValidate sx={{ mt: 3 }}>
                 <div className="ChampRecherche">
                     <Grid>

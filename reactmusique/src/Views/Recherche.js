@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Categories from "../components/Categorie";
 import ListeRecherche from "../components/ListeRecherche";
 import RechercheForm from "../components/RechercheForm";
+import Divider from '@mui/material/Divider';
 
 
 
@@ -23,6 +24,7 @@ export default function Recherche() {
   return (
     <div className="PageRecherche" >
       <h2>Recherche</h2>
+      <Divider sx={{ width: 3 / 4 }}></Divider>
       <RechercheForm handler={handleRecherche}></RechercheForm>
       <ListeRecherche precherche={recherche}></ListeRecherche>
       <Categories></Categories>

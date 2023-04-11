@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
 
 
-export default function MaCard(data) {
+export default function AlbumCard(data) {
     // console.log(data)
     // console.log(data.id)
     return (

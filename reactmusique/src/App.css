@@ -57,17 +57,14 @@
 .BoutAleatoire:hover{
   background-color: red;
 }
-.AlbumAccueil{
+.AlbumAccueil, .AlbumCat{
   display: flex;
   flex-direction: row;
-  /* margin: auto; */
+  margin-top: 5%;
   width: 100%;
   justify-content: space-evenly;
-
-  
-  
-  /* justify-content: space-between; */
 }
+
 .listeAlbum{
   display: flex;
   flex-direction: row;
@@ -156,6 +153,9 @@
   margin-top: 10%;
 }
 .PageUti{
+  margin-top: 10%;
+}
+.PageRecherche{
   margin-top: 10%;
 }
 .InfoUtilisateur{
