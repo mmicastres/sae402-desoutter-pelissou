@@ -20,7 +20,7 @@ export default function Categories(){
             return response.json();
             })
             .then((dataJSON) => {
-            console.log(dataJSON);
+            // console.log(dataJSON);
             setCategories(dataJSON)
 
             })
