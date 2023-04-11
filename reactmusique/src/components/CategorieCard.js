@@ -19,7 +19,7 @@ export default function CategorieCard(data) {
             />
             <CardContent sx={{ width: 220 }}>
                 <Typography gutterBottom variant="h5" component="div">
-                    {data.titre}
+                    {data.cat}
                 </Typography>
 
             </CardContent>
