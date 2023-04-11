@@ -4,12 +4,8 @@ import FormulaireConnexion from '../components/FormulaireConnexion';
 export default function ProfilView() {
 
     return(
-    <div>
-    <h1>Bonjour</h1>
-    <p>SGDIUFSIDFISDFISDF</p>
-
+    <div className='FormulaireConnexion'>
     <FormulaireConnexion></FormulaireConnexion>
-
     </div>
     )
     // const [utilisateurs, setUtilisateurs] = useState([]);

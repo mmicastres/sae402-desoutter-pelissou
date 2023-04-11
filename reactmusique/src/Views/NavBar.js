@@ -153,10 +153,10 @@ function ResponsiveAppBar() {
           */}
           <Box sx={{ flexGrow: 0 }}>
             {/*  -------  icone du user avec tooltip */}
-            <Tooltip title="Open settings">
+            <Tooltip title="Profil">
               {/* icone pour ouvrir le menu */}
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar alt="" src="/broken-image.jpg" />
               </IconButton>
             </Tooltip>
             {/* le menu avec ses options */}
@@ -177,15 +177,15 @@ function ResponsiveAppBar() {
               onClose={handleCloseUserMenu} // action si fermeture du menu
             >
               <MenuItem onClick={handleCloseUserMenu}>
-              <Link to={"/inscription"}>
+              <Link to={"/login"}>
                   <Typography textAlign="center">Connexion</Typography>
                 </Link>
               </MenuItem>
 
 
               <MenuItem onClick={handleCloseUserMenu}>
-              <Link to={"/profil"}>
-                  <Typography textAlign="center">Profile</Typography>
+              <Link to={"/login"}>
+                  <Typography textAlign="center">Profil</Typography>
               </Link>
               </MenuItem>
               {/* <MenuItem onClick={handleCloseUserMenu}>
