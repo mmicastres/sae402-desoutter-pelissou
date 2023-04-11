@@ -29,7 +29,7 @@ function App() {
           <Route path="/form" element={<ProfilView />} />
           <Route path="/album/:id" element={<AlbumSpe />} />
           <Route path="/recherche" element={<Recherche/>} />
-          <Route path="/utilisateur" element={<FormulaireIncription />}/>
+          <Route path="/inscription" element={<FormulaireIncription />}/>
           <Route path="/categories" element={<GestionCategorie />} />
         </Routes>
     </BrowserRouter>

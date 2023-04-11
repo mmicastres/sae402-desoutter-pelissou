@@ -15,12 +15,14 @@ import {useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
 
 import Utilisateurs from '../classes/Utilisateurs'
+import MonBouton from "../components/MonBouton";
 
 export default function Recherche(){
 
     return(
 <div className="BarreRecherche" >
 <Box component="form" noValidate sx={{ mt: 3 }}>
+<div className="ChampRecherche">
 <Grid container spacing={2}>
   <Grid item xs={6}>
     <TextField
@@ -32,19 +34,11 @@ export default function Recherche(){
       />
   </Grid>
 </Grid>
-<Button
-  type="submit"
-  fullWidth
-  variant="contained"
-  sx={{ mt: 3, mb: 2 , xs:6}}
+<MonBouton
+contenu={"Valider"}
 >
-  Valider
-</Button>
-<Grid container justifyContent="flex-end">
-  <Link to="/inscription">
-    <Grid item>Vous n'avez pas de compte ? Inscription</Grid>
-  </Link>
-</Grid>
+</MonBouton>
+    </div>
 </Box>
 </div>
 )
