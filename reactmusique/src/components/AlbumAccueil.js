@@ -13,7 +13,7 @@ export default function AlbumAccueil(props) {
     function AlbumAccueil() {
 
         const fetchOptions = {
-            method: "GET" // --> DELETE = suppression
+            method: "GET" 
         };
         fetch(url, fetchOptions)
             .then((response) => {

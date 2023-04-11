@@ -8,6 +8,6 @@ export default function MonBouton(data){
     };
 
     return(
-        <Button sx={styleBout} variant="contained">{data.contenu}</Button>
+        <Button onClick={() => { console.log('onClick'); }} sx={styleBout} variant="contained">{data.contenu}</Button>
     )
 }

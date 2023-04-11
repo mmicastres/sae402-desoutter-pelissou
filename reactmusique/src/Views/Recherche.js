@@ -11,6 +11,8 @@ import Container from "@mui/material/Container";
 import Divider from '@mui/material/Divider';
 import { useState, useEffect } from 'react';
 import Categories from "../components/Categorie";
+import FormControl from '@mui/material/FormControl';
+
 
 
 import { Link } from "react-router-dom";
@@ -20,6 +22,22 @@ import MonBouton from "../components/MonBouton";
 
 // Search artist, album, title function
 export default function Recherche() {
+  const [texte, setTexte] = useState("");
+  const handlerChange = (event) => setTexte(event.target.value);
+
+  const handleSubmit = (event) => {
+    console.log("uifzej")
+    event.preventDefault();
+    console.log(texte);
+    // props.handler(texte);
+  };
+  const handleClick = (event) => {
+    event.preventDefault();
+    console.log(texte);
+    // props.handler(texte);
+  };
+
+
 
   return (
     <div className="BarreRecherche" >
@@ -27,20 +45,30 @@ export default function Recherche() {
       <Divider sx={{ width: 3 / 4 }}></Divider>
       <Box component="form" noValidate sx={{ mt: 3 }}>
         <div className="ChampRecherche">
-          <Grid>
+        <FormControl onSubmit={handleSubmit}>
             <Grid>
-              <TextField
-                fullWidth
-                id="recherche"
-                label="Rechercher un artiste, album, titre ..."
-                name="recherche"
-                autoComplete="family-name"
-              />
+              <Grid>
+                <TextField
+                  value={texte}
+                  onChange={handlerChange}
+                  fullWidth
+                  id="recherche"
+                  label="Rechercher un artiste, album, titre ..."
+                  name="recherche"
+                  autoComplete="family-name"
+                />
+              </Grid>
             </Grid>
-          </Grid>
-          <div className="divBoutRecherche">
-            <MonBouton contenu={"Valider"}></MonBouton>
-          </div>
+            <div className="divBoutRecherche">
+              {/* <MonBouton 
+              type="submit" 
+              contenu={"Valider"}
+              onClick={handleClick}>
+              </MonBouton> */}
+              <Button onClick={handleClick} variant="contained">Rechercher</Button>
+              {/* <input type="submit" value="Submit" /> */}
+            </div>
+          </FormControl>
         </div>
       </Box>
       <Categories></Categories>
