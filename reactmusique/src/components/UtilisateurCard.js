@@ -15,6 +15,7 @@ import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../App';
 
 interface ExpandMoreProps extends IconButtonProps {
     expand: boolean;
@@ -32,8 +33,8 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 }));
 
 export default function UtilisateurCard(data) {
-    console.log(data)
-    const test = React.createContext("admi");
+    const value = React.useContext(UserContext);
+    console.log(value.admin)
     // console.log(test._currentValue)
     const [expanded, setExpanded] = React.useState(false);
 
@@ -43,7 +44,7 @@ export default function UtilisateurCard(data) {
         setExpanded(!expanded);
     };
 
-    if (test._currentValue == "admin") {
+    if (value.admin == "1") {
 
         return (
             <div className='InfoUtilisateur'>
