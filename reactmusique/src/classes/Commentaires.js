@@ -1,9 +1,10 @@
 export default class Albums {
-    constructor(commentaire,date_ajout_com, note, pseudo, valide) {
+    constructor(commentaire,date_ajout_com, note, pseudo, id_album, valide) {
     this._commentaire = commentaire;
     this._note = note;
     this._date_ajout_com = date_ajout_com;
     this._pseudo = pseudo;
+    this._id_album = id_album;
     this._valide = valide;
     }
 
