@@ -29,8 +29,13 @@ import AlbumParCategorie from './Views/RechercheParCategorie';
 import PageArtiste from './Views/PageArtiste';
 
 
+
+// export let userContext = React.createContext("");
+// export let userAdmin = React.createContext("");
+export const UserContext = React.createContext({pseudo: '', admin: ''});
 // Hello World function
 function App() {
+
   return (
     <div className="App">
       <BrowserRouter>

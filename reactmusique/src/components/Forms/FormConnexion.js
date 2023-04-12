@@ -15,6 +15,8 @@ import {useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
 
 import Utilisateurs from '../../classes/Utilisateurs'
+import { UserContext } from "../../App"
+// import { userAdmin } from "../../App"
 
 
 
@@ -35,7 +37,7 @@ export default function FormConnexion(props) {
     event.preventDefault();
     let data = new Utilisateurs(pseudo,null, mdp);
     props.handler(data);
-    console.log(data);
+    // console.log(data);
   }
   
 
