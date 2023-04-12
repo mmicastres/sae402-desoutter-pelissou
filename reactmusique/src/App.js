@@ -21,6 +21,7 @@ import BoutonValidationComs from './Views/BoutonsValidation/BoutonValidationCom'
 import BoutonValidationAnecdote from './Views/BoutonsValidation/BoutonValidationAnecdote';
 import BoutonValidationTitre from './Views/BoutonsValidation/BoutonValidationTitre';
 import BoutonValidationAlbum from './Views/BoutonsValidation/BoutonValidationAlbum';
+import FormulaireModifUtilisateur from './Views/FormulairesModif/FormulaireModifUtilisateur';
 import Recherche from './Views/Recherche';
 import PageTitre from './Views/PageTitre';
 import PageUtilisateur from './Views/PageUtilisateur';
@@ -52,6 +53,7 @@ function App() {
           <Route path="/admins/anecdotes/:idAnec"element={<BoutonValidationAnecdote/>}/>
           <Route path="/admins/albums/:idAlbum"element={<BoutonValidationAlbum/>}/>
           <Route path="/admins/titres/:idTitre"element={<BoutonValidationTitre/>}/>
+          <Route path="/utilisateurs/:Pseudo"element={<FormulaireModifUtilisateur/>}/>
           <Route path="/utilisateur/:pseudo" element={<PageUtilisateur />} />
           <Route path="/artiste/:pseudo" element={<PageArtiste />} />
           <Route path="/categories/ajout" element={<FomulaireAjoutCategorie/>}/>
