@@ -14,7 +14,7 @@ import {useState, useEffect} from 'react';
 
 import { Link } from "react-router-dom";
 
-import Utilisateurs from '../classes/Utilisateurs'
+import Utilisateurs from '../../classes/Utilisateurs'
 
 
 

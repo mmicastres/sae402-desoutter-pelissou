@@ -8,7 +8,7 @@ import Anecdotes from '../../classes/Anecdotes'
 
 export default function BtnValidationAnecdote(props) {
 
-    // Instancing all needed variables to create a new Album
+    // Instancing all needed variables to validate the anecdote
 
     const valide = 1;
 

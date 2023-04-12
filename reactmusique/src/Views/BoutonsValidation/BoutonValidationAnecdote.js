@@ -1,4 +1,4 @@
-import BtnValidationCom from "../components/Btn/BtnValidationCom";
+import BtnValidationAnecdote from "../../components/Btn/BtnValidationAnecdote";
 import { useParams } from 'react-router-dom';
 
 
@@ -6,13 +6,13 @@ export default function BoutonValidationCom(){
 
     let id = useParams();
 
-    console.log(id.idComm);
+    console.log(id.idAnec);
 
     let handlerUtilisateur = (data) =>{
 
 
 
-        const url = `https://sae301.alwaysdata.net/api/admins/commentaires/${id.idComm}`;
+        const url = `https://sae301.alwaysdata.net/api/admins/anecdotes/${id.idAnec}`;
 
         
         let myHeaders = new Headers();
@@ -36,7 +36,7 @@ export default function BoutonValidationCom(){
 
     return(
         <div className="FormulaireConnexion">
-        <BtnValidationCom handler={handlerUtilisateur} ></BtnValidationCom>
+        <BtnValidationAnecdote handler={handlerUtilisateur} ></BtnValidationAnecdote>
         </div>
     )
 }

@@ -6,9 +6,9 @@ import Albums from '../../classes/Albums'
 
 
 
-export default function BtnValidationTitre(props) {
+export default function BtnValidationAlbum(props) {
 
-    // Instancing all needed variables to create a new Album
+    // Instancing all needed variables to validate the Album
 
     const valide = 1;
 

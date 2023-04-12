@@ -6,9 +6,9 @@ import Commentaires from '../../classes/Commentaires'
 
 
 
-export default function FormAjoutAlbum(props) {
+export default function FormAjoutCom(props) {
 
-    // Instancing all needed variables to create a new Album
+    // Instancing all needed variables to validate the Comment
 
     const valide = 1;
 

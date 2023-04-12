@@ -8,7 +8,7 @@ import Titres from '../../classes/Titres'
 
 export default function BtnValidationTitre(props) {
 
-    // Instancing all needed variables to create a new Album
+    // Instancing all needed variables to validate the Single
 
     const valide = 1;
 

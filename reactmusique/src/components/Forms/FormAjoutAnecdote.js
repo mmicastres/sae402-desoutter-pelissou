@@ -15,7 +15,7 @@ import { useState, useEffect } from 'react';
 
 import { Link } from "react-router-dom";
 
-import Anecdotes from "../classes/Anecdotes";
+import Anecdotes from "../../classes/Anecdotes";
 
 
 

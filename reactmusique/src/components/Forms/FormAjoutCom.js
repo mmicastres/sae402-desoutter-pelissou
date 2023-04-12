@@ -19,7 +19,7 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 import { Link } from "react-router-dom";
 
-import Commentaires from "../classes/Commentaires";
+import Commentaires from "../../classes/Commentaires";
 
 
 
