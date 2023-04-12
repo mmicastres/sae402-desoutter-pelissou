@@ -21,6 +21,7 @@ import Recherche from './Views/Recherche';
 import PageTitre from './Views/PageTitre';
 import PageUtilisateur from './Views/PageUtilisateur';
 import AlbumParCategorie from './Views/RechercheParCategorie';
+import PageArtiste from './Views/PageArtiste';
 
 
 // Hello World function
@@ -44,6 +45,7 @@ function App() {
           <Route path="/artistes/:Pseudo/titres/:idTitre/anecdotes" element={<FormulaireAjoutAnecdote />} />
           <Route path="/albums/:idAlbum/commentaires" element={<FormulaireAjoutCom/>}/>
           <Route path="/utilisateur/:pseudo" element={<PageUtilisateur />} />
+          <Route path="/artiste/:pseudo" element={<PageArtiste />} />
           <Route path="/form-ajout-album" element={<FormulaireAjoutAlbum/>}/> 
         </Routes>
     </BrowserRouter>
