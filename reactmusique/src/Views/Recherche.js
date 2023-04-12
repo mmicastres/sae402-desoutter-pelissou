@@ -19,15 +19,29 @@ export default function Recherche() {
 
   const [recherche, setRecherche] = useState("");
   let handleRecherche = (v) => setRecherche(v);
+  // console.log(recherche);
+
+  if (recherche === "") {
+    return (
+      <div className="PageRecherche" >
+        <h2>Recherche</h2>
+        <Divider sx={{ width: 3 / 4 }}></Divider>
+        <RechercheForm handler={handleRecherche}></RechercheForm>
+        <Categories></Categories>
+      </div>
+    )
+  }
+  else {
+    return (
+      <div className="PageRecherche" >
+        <h2>Recherche</h2>
+        <Divider sx={{ width: 3 / 4 }}></Divider>
+        <RechercheForm handler={handleRecherche}></RechercheForm>
+        <ListeRecherche precherche={recherche}></ListeRecherche>
+        <Categories></Categories>
+      </div>
+    )
+  }
 
 
-  return (
-    <div className="PageRecherche" >
-      <h2>Recherche</h2>
-      <Divider sx={{ width: 3 / 4 }}></Divider>
-      <RechercheForm handler={handleRecherche}></RechercheForm>
-      <ListeRecherche precherche={recherche}></ListeRecherche>
-      <Categories></Categories>
-    </div>
-  )
 }

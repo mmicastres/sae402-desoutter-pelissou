@@ -27,8 +27,6 @@ export default function PageArtiste(data){
 
             })
             .catch((error) => console.log(error));
-
-
     }
 
     useEffect(() => {
@@ -42,7 +40,7 @@ export default function PageArtiste(data){
             <h2>{artiste.pseudo}</h2>
             <UtilisateurCard pseudo = {artiste.pseudo} date = {artiste.date_inscription}></UtilisateurCard>
             <AlbumArtiste pseudo = {artiste.pseudo}></AlbumArtiste>
-            {/* <Commentaires pseudo={artiste.pseudo}></Commentaires> */}
+            <Commentaires pseudo={artiste.pseudo}></Commentaires>
         </div>
     )
 }

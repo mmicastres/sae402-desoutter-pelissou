@@ -9,14 +9,14 @@ import { Link } from 'react-router-dom';
 
 
 export default function AlbumCard(data) {
-    // console.log(data)
+    // console.log(data)x
     // console.log(data.id)
     return (
         <Card sx={{ maxWidth: 345 }}>
             <CardMedia
                 sx={{ height: 140 }}
-                image={data.pochette}
-                title="green iguana"
+                image={data.src}
+                title={data.titre}
             />
             <CardContent sx={{ width: 220 }}>
                 <Typography gutterBottom variant="h5" component="div">

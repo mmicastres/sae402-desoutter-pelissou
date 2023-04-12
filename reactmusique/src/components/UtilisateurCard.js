@@ -76,11 +76,6 @@ export default function UtilisateurCard(data) {
     
                             </Avatar>
                         }
-                        action={
-                            <IconButton aria-label="settings">
-                              <MoreVertIcon />
-                            </IconButton>
-                          }
                           title={data.pseudo}
                           subheader={data.date}
                     />

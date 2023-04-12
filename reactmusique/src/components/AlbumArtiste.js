@@ -3,7 +3,7 @@ import AlbumCard from './AlbumCard';
 
 
 export default function AlbumArtiste(data){
-    // console.log(data)
+    console.log(data)
     const [lAlbums, setAlbums] = useState([])
     let url =
         `https://sae301.alwaysdata.net/api/artistes/${data.pseudo}/albums`;
@@ -27,7 +27,8 @@ export default function AlbumArtiste(data){
 
     useEffect(() => {
         AlbumArtiste()
-    }, [])
+
+    }, [data])
 
 
 

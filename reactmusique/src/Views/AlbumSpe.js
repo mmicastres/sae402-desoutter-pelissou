@@ -41,7 +41,6 @@ export default function AlbumSpe() {
 
     return (
 
-
         <div className='Album'>
 
             <h2>Titre album : {lAlbums.titre}</h2>
