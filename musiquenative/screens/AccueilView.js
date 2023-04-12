@@ -8,7 +8,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 export default function AccueilView() {
     return (
         <View style={styles.container}>
-            <Text>Liste</Text>
+            <Text style={styles.textStyle}>Les derniers albums : </Text>
         </View>
 
 
@@ -19,7 +19,15 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
+        // alignItems: 'center',
+        // justifyContent: 'center',
+    },
+    textStyle: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'left',
+        fontSize: 20,
+        fontWeight: 'bold',
+        // justifyContent: 'center',
     },
 });
