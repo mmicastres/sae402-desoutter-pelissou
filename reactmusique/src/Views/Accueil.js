@@ -1,4 +1,5 @@
 import AlbumAccueil from "../components/AlbumAccueil"
+import AlbumsAccueilAdmin from "../components/AlbumsAccueilAdmin"
 import { Button } from "@mui/material"
 import MonBouton from "../components/MonBouton"
 import { Link } from "react-router-dom"
@@ -16,6 +17,9 @@ export default function Accueil() {
             <Link to={`/album/${nbrRand}`}>
                 <MonBouton contenu={"Album aléatoire"}></MonBouton>
             </Link>
+
+            <h3>Liste des Albums non valides</h3>
+                <AlbumsAccueilAdmin/>
             
         </div>
     )

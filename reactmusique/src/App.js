@@ -44,7 +44,7 @@ function App() {
           <Route path="/" element={<Accueil />} />
           <Route path="/login" element={<ProfilView />} />
           <Route path="/form" element={<ProfilView />} />
-          <Route path="/album/:id" element={<AlbumSpe />} />
+          <Route path="/album/:idAlbum" element={<AlbumSpe />} />
           <Route path="/recherche" element={<Recherche/>} />
           <Route path="/login" element={<FormulaireConnexion />}/>
           <Route path="/inscription" element={<FormulaireIncription/>}/>
