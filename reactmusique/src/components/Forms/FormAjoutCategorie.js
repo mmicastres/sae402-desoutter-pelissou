@@ -38,6 +38,7 @@ export default function FormAjoutCategorie(props) {
         let data = new Categories(nom_categorie);
         console.log(nom_categorie);
         props.handler(data);
+        
 
     }
 
@@ -56,7 +57,7 @@ export default function FormAjoutCategorie(props) {
                     <HistoryEduIcon />
                 </Avatar>
                 <Typography component="h1" variant="h5">
-                    Ajouter une anecdote
+                    Ajouter une catégorie
                 </Typography>
                 <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
                     <Grid container spacing={2}>

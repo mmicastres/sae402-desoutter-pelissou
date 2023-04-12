@@ -42,7 +42,7 @@ function App() {
           <Route path="/recherche" element={<Recherche/>} />
           <Route path="/login" element={<FormulaireConnexion />}/>
           <Route path="/inscription" element={<FormulaireIncription/>}/>
-          <Route path="/categories" element={<GestionCategorie />} />
+          <Route path="/admin/categories" element={<GestionCategorie />} />
           <Route path="/categories/:nomCat/albums" element={<AlbumParCategorie />} />
           <Route path="/album/:idAlbum/titre/:idTitre" element={<PageTitre />} />
           <Route path="/artiste/:Pseudo/albums/:idAlbum" element={<FormulaireAjoutTitre />} />

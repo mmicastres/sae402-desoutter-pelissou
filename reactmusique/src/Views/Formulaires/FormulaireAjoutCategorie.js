@@ -22,9 +22,12 @@ export default function FormulaireAjoutCategorie(){
         })
         .then((dataJSON) => {
             console.log(dataJSON);
+            window.location.reload();
         })
         .catch((error) => console.log(error));
     };
+
+    
 
     return(
         <div className="FormulaireConnexion">
