@@ -31,6 +31,7 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 }));
 
 export default function UtilisateurCard(data) {
+    console.log(data)
     const test = React.createContext("admi");
     // console.log(test._currentValue)
     const [expanded, setExpanded] = React.useState(false);
@@ -75,8 +76,13 @@ export default function UtilisateurCard(data) {
     
                             </Avatar>
                         }
-                        title="Pseudo"
-                        subheader="20/01/2023"
+                        action={
+                            <IconButton aria-label="settings">
+                              <MoreVertIcon />
+                            </IconButton>
+                          }
+                          title={data.pseudo}
+                          subheader={data.date}
                     />
                 </Card>
             </div>

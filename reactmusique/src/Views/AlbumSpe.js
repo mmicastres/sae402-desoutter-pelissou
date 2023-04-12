@@ -48,7 +48,7 @@ export default function AlbumSpe() {
             <div className='AlbumInfo'>
                 <div className='AlbumCover'>
                     <p>tesy</p>
-                    <Link to={`/utilisateur/${lAlbums.pseudo}`}>
+                    <Link to={`/artiste/${lAlbums.pseudo}`}>
                         <p>{lAlbums.pseudo}</p>
                     </Link>
                 </div>
