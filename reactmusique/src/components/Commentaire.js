@@ -38,7 +38,7 @@ export default function Commentaires(data) {
 
     useEffect(() => {
         getCommentaires()
-    }, [])
+    }, [data])
 
     return (
 

@@ -31,63 +31,62 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
     }),
 }));
 
-export default function UtilisateurCard(data) {
+export default function TitreCard(data) {
     console.log(data)
     const test = React.createContext("admi");
     // console.log(test._currentValue)
     const [expanded, setExpanded] = React.useState(false);
 
-
+   
 
     const handleExpandClick = () => {
         setExpanded(!expanded);
     };
 
-    if (test._currentValue == "admin") {
-
+    if ( test._currentValue == "admin") {
+        
         return (
             <div className='InfoUtilisateur'>
-                <Card sx={{ width: 1 / 3 }}>
-                    <Link to={`/utilisateur/${data.pseudo}`}>
-                        <CardHeader
-                            avatar={
-                                <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-
-                                </Avatar>
-                            }
-
-                            action={
-                                <IconButton aria-label="settings">
-                                    <MoreVertIcon />
-                                </IconButton>
-                            }
-                            title={data.pseudo}
-                            subheader={data.date}
-                        />
+                <Card sx={{ width: 1/3 }}>
+                    <CardHeader
+                        avatar={
+                            <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+    
+                            </Avatar>
+                        }
+                            
+                        action={
+                          <IconButton aria-label="settings">
+                            <MoreVertIcon />
+                          </IconButton>
+                        }
+                        title="{data.titre}"
+                        subheader={data.date}
+                    />
+                </Card>
+            </div>
+        );
+    }
+    else{
+        return (
+            <div className='InfoUtilisateur'>
+                <Card sx={{ width: 1/3 }}>
+                <Link to={`/album/${data.idAlbum}/titre/${data.idTitre}`}>
+                    <CardHeader
+                        // avatar={
+                        //     <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+    
+                        //     </Avatar>
+                        // }
+                        
+                          title={data.titre}
+                          
+                    />
                     </Link>
                 </Card>
             </div>
         );
     }
-    else {
-        return (
-            <div className='InfoUtilisateur'>
-                <Card sx={{ width: 1 / 3 }}>
-                    <Link to={`/utilisateur/${data.pseudo}`}>
-                        <CardHeader
-                            avatar={
-                                <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
 
-                                </Avatar>
-                            }
-                            title={data.pseudo}
-                            subheader={data.date}
-                        />
-                    </Link>
-                </Card>
-            </div>
-        );
-    }
-
-
+    
 }

@@ -44,7 +44,7 @@ export default function FormAjoutCommentaire(props) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        let data = new Commentaires(commentaire,note, date_ajout_com,pseudo, id_album);
+        let data = new Commentaires(commentaire, date_ajout_com, note, pseudo, id_album);
         console.log(commentaire);
         console.log(note);
         console.log(date_ajout_com);
