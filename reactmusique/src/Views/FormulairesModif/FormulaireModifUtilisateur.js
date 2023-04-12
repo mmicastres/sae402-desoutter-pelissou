@@ -29,6 +29,7 @@ export default function FormulaireModifUtilisateur(){
         })
         .then((dataJSON) => {
             console.log(dataJSON);
+            window.location.reload();
         })
         .catch((error) => console.log(error));
     };
