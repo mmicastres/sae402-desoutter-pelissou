@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import AlbumCard from './AlbumCard';
 import UtilisateurCard from './UtilisateurCard';
+import TitreCard from './TitreCard';
 
 
 export default function ListeRecherche(data){
@@ -45,6 +46,9 @@ export default function ListeRecherche(data){
           )}
             {lRecherche[0].map((a) =>
             <UtilisateurCard pseudo = {a.pseudo} date = {a.date_inscription}></UtilisateurCard>
+          )}
+            {lRecherche[2].map((t) =>
+            <TitreCard idTitre = {t.id_titre} titre = {t.titre} idAlbum={t.id_album}></TitreCard>
           )}
           </div>
           )
