@@ -1,9 +1,14 @@
-import FormInscription from "../Views/FormInscript"
+import FormAjoutCom from "../../components/Forms/FormAjoutCom";
+import { useParams } from 'react-router-dom';
 
-export default function FormulaireIncription(){
 
+export default function FormulaireAjoutAlbum(){
+    let id = useParams();
+    
     let handlerUtilisateur = (data) =>{
-        const url = `https://sae301.alwaysdata.net/api/utilisateurs`;
+        
+
+        const url = `https://sae301.alwaysdata.net/api/albums/${id.idAlbum}/commentaires`;
 
         
         let myHeaders = new Headers();
@@ -27,7 +32,7 @@ export default function FormulaireIncription(){
 
     return(
         <div className="FormulaireConnexion">
-        <FormInscription handler={handlerUtilisateur} ></FormInscription>
+        <FormAjoutCom handler={handlerUtilisateur} ></FormAjoutCom>
         </div>
     )
 }

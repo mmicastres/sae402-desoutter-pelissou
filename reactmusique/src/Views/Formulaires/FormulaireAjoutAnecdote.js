@@ -1,4 +1,4 @@
-import FormAjoutAnecdote from "../Views/FormAjoutAnecdote"
+import FormAjoutAnecdote from "../../components/Forms/FormAjoutAnecdote"
 import { Routes, Route, useParams } from 'react-router-dom';
 
 

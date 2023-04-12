@@ -1,10 +1,14 @@
-import FormAjoutCategorie from "../Views/FormAjoutCategorie";
+import FormAjoutTitre from "../../components/Forms/FormAjoutTitre"
+import { Routes, Route, useParams } from 'react-router-dom';
 
 
-export default function FormulaireAjoutCategorie(){
+export default function FormulaireAjoutTitre(){
+    let id = useParams();
+
+    console.log(id.idAlbum);
 
     let handlerUtilisateur = (data) =>{
-        const url = `https://sae301.alwaysdata.net/api/categories/ajout`;
+        const url = `https://sae301.alwaysdata.net/api/artistes/${id.Pseudo}/albums/${id.idAlbum}/titres`;
 
         
         let myHeaders = new Headers();
@@ -28,7 +32,7 @@ export default function FormulaireAjoutCategorie(){
 
     return(
         <div className="FormulaireConnexion">
-        <FormAjoutCategorie handler={handlerUtilisateur} ></FormAjoutCategorie>
+        <FormAjoutTitre handler={handlerUtilisateur} ></FormAjoutTitre>
         </div>
     )
 }

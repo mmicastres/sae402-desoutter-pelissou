@@ -13,11 +13,12 @@ import Accueil from './Views/Accueil';
 import GestionCategorie from './Views/GestionCategories'
 import FormulaireIncription from './components/FormulaireInscription';
 import FormulaireConnexion from './components/FormulaireConnexion';
-import FormulaireAjoutAlbum from './components/FormulaireAjoutAlbum';
+import FormulaireAjoutAlbum from './Views/Formulaires/FormulaireAjoutAlbum';
 import FormulaireAjoutTitre from './components/FormulaireAjoutTitre';
 import FormulaireAjoutAnecdote from './components/FormulaireAjoutAnecdote';
 import FormulaireAjoutCom from './components/FormulaireAjoutCom';
 import FomulaireAjoutCategorie from './components/FormulaireAjoutCategorie';
+import BoutonValidationComs from './components/BoutonValidationCom';
 import Recherche from './Views/Recherche';
 import PageTitre from './Views/PageTitre';
 import PageUtilisateur from './Views/PageUtilisateur';
@@ -45,6 +46,7 @@ function App() {
           <Route path="/artiste/:Pseudo/albums/:idAlbum" element={<FormulaireAjoutTitre />} />
           <Route path="/artistes/:Pseudo/titres/:idTitre/anecdotes" element={<FormulaireAjoutAnecdote />} />
           <Route path="/albums/:idAlbum/commentaires" element={<FormulaireAjoutCom/>}/>
+          <Route path="/admins/commentaires/:idComm"element={<BoutonValidationComs/>}/>
           <Route path="/utilisateur/:pseudo" element={<PageUtilisateur />} />
           <Route path="/artiste/:pseudo" element={<PageArtiste />} />
           <Route path="/categories/ajout" element={<FomulaireAjoutCategorie/>}/>

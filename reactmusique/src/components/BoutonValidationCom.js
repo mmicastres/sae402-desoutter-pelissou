@@ -1,21 +1,25 @@
-import FormAjoutTitre from "../Views/FormAjoutTitre"
-import { Routes, Route, useParams } from 'react-router-dom';
+import BtnValidationCom from "../components/Btn/BtnValidationCom";
+import { useParams } from 'react-router-dom';
 
 
-export default function FormulaireAjoutTitre(){
+export default function BoutonValidationCom(){
+
     let id = useParams();
 
-    console.log(id.idAlbum);
+    console.log(id.idComm);
 
     let handlerUtilisateur = (data) =>{
-        const url = `https://sae301.alwaysdata.net/api/artistes/${id.Pseudo}/albums/${id.idAlbum}/titres`;
+
+
+
+        const url = `https://sae301.alwaysdata.net/api/admins/commentaires/${id.idComm}`;
 
         
         let myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
         
         const fetchOptions = {
-            method: "POST",
+            method: "PUT",
             headers: myHeaders,
             body: JSON.stringify(data.toJSON()) // les nvelles valeurs du produit
         };
@@ -32,7 +36,7 @@ export default function FormulaireAjoutTitre(){
 
     return(
         <div className="FormulaireConnexion">
-        <FormAjoutTitre handler={handlerUtilisateur} ></FormAjoutTitre>
+        <BtnValidationCom handler={handlerUtilisateur} ></BtnValidationCom>
         </div>
     )
 }
