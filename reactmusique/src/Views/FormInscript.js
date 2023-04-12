@@ -22,23 +22,28 @@ import Utilisateurs from '../classes/Utilisateurs'
 export default function FormInscription(props) {
   
   
+  const date = new Date();
+  let date_inscription = date.toJSON().slice(0, 10);
+
   const [pseudo, setPseudo] = useState("");
   const [mail, setMail] = useState("");
   const [mdp, setMdp] = useState("");
+  const [pp, setPp] = useState("");
 
 
   const HandleChangePseudo = (event) => setPseudo(event.target.value);
   const HandleChangeMail = (event) => setMail(event.target.value);
   const HandleChangeMdp = (event) => setMdp(event.target.value);
+  const HandleChangePp = (event) => setPp(event.target.value);
+
 
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    let data = new Utilisateurs(pseudo, mail, mdp);
+    let data = new Utilisateurs(pseudo, mail, mdp, date_inscription,pp);
     console.log(pseudo);
     console.log(mail);
     console.log(mdp);
-
     props.handler(data);
 
 
@@ -87,8 +92,7 @@ export default function FormInscription(props) {
                 id="email"
                 label="Mail"
                 name="email"
-                type="email"
-                autoComplete="email"
+                type={"email"}
                 onChange={HandleChangeMail}
                 onChangeText={setMail}
               />
@@ -104,6 +108,17 @@ export default function FormInscription(props) {
                 autoComplete="new-password"
                 onChange={HandleChangeMdp}
                 onChangeText={setMdp}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                fullWidth
+                name="pp"
+                label="Photo de Profil"
+                id="pp"
+                value={pp}
+                onChange={HandleChangePp}
+                onChangeText={setPp}
               />
             </Grid>
           </Grid>
