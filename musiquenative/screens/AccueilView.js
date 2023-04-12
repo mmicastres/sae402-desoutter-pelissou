@@ -3,12 +3,14 @@ import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import AlbumAccueil from '../components/AlbumsAccueil';
 
 
 export default function AccueilView() {
     return (
         <View style={styles.container}>
             <Text style={styles.textStyle}>Les derniers albums : </Text>
+            <AlbumAccueil></AlbumAccueil>
         </View>
 
 
