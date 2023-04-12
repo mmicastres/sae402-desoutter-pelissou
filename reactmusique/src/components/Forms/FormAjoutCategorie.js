@@ -15,12 +15,12 @@ import { useState, useEffect } from 'react';
 
 import { Link } from "react-router-dom";
 
-import Anecdotes from "../classes/Anecdotes";
+import Categories from "../../classes/Categories";
 
 
 
 
-export default function FormAjoutcontenu(props) {
+export default function FormAjoutCategorie(props) {
 
     let id = useParams();
 
@@ -29,16 +29,14 @@ export default function FormAjoutcontenu(props) {
     let pseudo = id.Pseudo;
     let id_titre = id.idTitre;
 
-    const [contenu, setContenu] = useState("");
+    const [nom_categorie, setCategorie] = useState("");
 
-    const HandleChangeContenu = (event) => setContenu(event.target.value);
+    const HandleChangeCategorie = (event) => setCategorie(event.target.value);
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        let data = new Anecdotes(contenu ,pseudo, id_titre);
-        console.log(contenu);
-        console.log(pseudo);
-        console.log(id_titre);
+        let data = new Categories(nom_categorie);
+        console.log(nom_categorie);
         props.handler(data);
 
     }
@@ -66,13 +64,13 @@ export default function FormAjoutcontenu(props) {
                             <TextField
                                 required
                                 fullWidth
-                                id="contenu"
-                                label="Contenu de l'Anecdote"
-                                name="contenu"
+                                id="nom_categorie"
+                                label="Nouvelle Catégorie"
+                                name="nom_categorie"
                                 autoComplete="family-name"
-                                value={contenu}
-                                onChange={HandleChangeContenu}
-                                onChangeText={setContenu}
+                                value={nom_categorie}
+                                onChange={HandleChangeCategorie}
+                                onChangeText={setCategorie}
                             />
                         </Grid>
                     </Grid>

@@ -18,7 +18,7 @@ import { useState, useEffect } from 'react';
 
 import { Link } from "react-router-dom";
 
-import Albums from '../classes/Albums'
+import Albums from '../../classes/Albums'
 
 
 

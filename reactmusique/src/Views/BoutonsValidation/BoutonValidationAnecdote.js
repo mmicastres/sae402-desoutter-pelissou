@@ -1,17 +1,25 @@
-import FormAjoutCategorie from "../Views/FormAjoutCategorie";
+import BtnValidationAnecdote from "../../components/Btn/BtnValidationAnecdote";
+import { useParams } from 'react-router-dom';
 
 
-export default function FormulaireAjoutCategorie(){
+export default function BoutonValidationCom(){
+
+    let id = useParams();
+
+    console.log(id.idAnec);
 
     let handlerUtilisateur = (data) =>{
-        const url = `https://sae301.alwaysdata.net/api/categories/ajout`;
+
+
+
+        const url = `https://sae301.alwaysdata.net/api/admins/anecdotes/${id.idAnec}`;
 
         
         let myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
         
         const fetchOptions = {
-            method: "POST",
+            method: "PUT",
             headers: myHeaders,
             body: JSON.stringify(data.toJSON()) // les nvelles valeurs du produit
         };
@@ -28,7 +36,7 @@ export default function FormulaireAjoutCategorie(){
 
     return(
         <div className="FormulaireConnexion">
-        <FormAjoutCategorie handler={handlerUtilisateur} ></FormAjoutCategorie>
+        <BtnValidationAnecdote handler={handlerUtilisateur} ></BtnValidationAnecdote>
         </div>
     )
 }

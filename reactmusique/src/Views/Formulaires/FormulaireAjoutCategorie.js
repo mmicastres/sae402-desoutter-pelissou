@@ -1,9 +1,10 @@
-import FormAjoutAlbum from "../Views/FormAjoutAlbum"
+import FormAjoutCategorie from "../../components/Forms/FormAjoutCategorie";
 
-export default function FormulaireAjoutAlbum(){
+
+export default function FormulaireAjoutCategorie(){
 
     let handlerUtilisateur = (data) =>{
-        const url = `https://sae301.alwaysdata.net/api/albums`;
+        const url = `https://sae301.alwaysdata.net/api/categories/ajout`;
 
         
         let myHeaders = new Headers();
@@ -27,7 +28,7 @@ export default function FormulaireAjoutAlbum(){
 
     return(
         <div className="FormulaireConnexion">
-        <FormAjoutAlbum handler={handlerUtilisateur} ></FormAjoutAlbum>
+        <FormAjoutCategorie handler={handlerUtilisateur} ></FormAjoutCategorie>
         </div>
     )
 }

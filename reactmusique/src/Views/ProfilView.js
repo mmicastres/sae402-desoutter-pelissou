@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import FormulaireConnexion from '../components/FormulaireConnexion';
+import FormulaireConnexion from './Formulaires/FormulaireConnexion';
 
 export default function ProfilView() {
 
