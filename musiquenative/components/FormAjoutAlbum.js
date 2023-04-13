@@ -6,11 +6,12 @@ import { View, Button, StyleSheet, Picker } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 
 import Albums from '../classes/Albums';
+import { UserContext } from '../App';
 
 
 
 export default function FormInscription(props) {
-
+    let value = React.useContext(UserContext);
 
     const [lCategorie, setCategories] = useState([])
     const url =
@@ -40,7 +41,7 @@ export default function FormInscription(props) {
 
     const date = new Date();
     let date_ajout = date.toJSON().slice(0, 10);
-    let pseudo = "Poulet";
+    let pseudo = value.pseudo;
 
     const [titre, setTitre] = useState("");
     const [sortie_album, setSortie_album] = useState("");

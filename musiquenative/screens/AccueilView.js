@@ -7,11 +7,14 @@ import AlbumAccueil from '../components/AlbumsAccueil';
 import BoutonNavAjout from '../components/ButtontoAjoutAlbum';
 import { useEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
-
+import { UserContext } from '../App';
+import React from 'react';
 
 export default function AccueilView() {
+    let value = React.useContext(UserContext);
     const navigation = useNavigation();
 
+    if (value.admin == "1") {
     return (
         <View style={styles.container}>
             <Text style={styles.textStyle}>Les derniers albums : </Text>
@@ -19,6 +22,14 @@ export default function AccueilView() {
             <BoutonNavAjout></BoutonNavAjout>
         </View>
     )
+    }else{
+        return(
+            <View style={styles.container}>
+            <Text style={styles.textStyle}>Les derniers albums : </Text>
+            <AlbumAccueil></AlbumAccueil>
+        </View>
+        )
+    }
 }
 
 const styles = StyleSheet.create({

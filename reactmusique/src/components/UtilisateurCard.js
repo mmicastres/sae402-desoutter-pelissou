@@ -43,7 +43,6 @@ export default function UtilisateurCard(data) {
     const handleExpandClick = () => {
         setExpanded(!expanded);
     };
-
     if (value.admin == "1") {
 
         return (

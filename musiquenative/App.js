@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, RefreshControl } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -12,15 +12,16 @@ import AlbumView from './screens/AlbumView';
 import TitreView from './screens/TitreView';
 import AjoutView from './screens/AjoutView';
 import { Ionicons } from '@expo/vector-icons';
-import { UserContext} from './Contexte';
+// import { UserContext} from './Contexte';
 import { useState, useEffect } from 'react';
 
 
-
+export const UserContext = React.createContext({pseudo: '', admin: ''});
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 function MainTabNavigator() {
+
   return (
     <Stack.Navigator>
       <Stack.Screen name="Accueil" component={AccueilView} options={{ headerShown: false }} />
@@ -50,7 +51,7 @@ export default function App() {
   useEffect(() =>
   setConnecte(UserContext.admin)
   )
-  console.log(UserContext._currentValue)
+  console.log(UserContext._currentValue.admin)
   // if (connecte == 0){
   return (
     // <UserContext.Provider value={connecte}>

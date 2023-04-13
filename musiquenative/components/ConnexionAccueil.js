@@ -6,8 +6,8 @@ import AlbumCard from './AlbumCard';
 import FormConnexion from './FormConnexion';
 import React from "react";
 import { useState, useEffect } from 'react';
-import UserContext from '../Contexte';
-import { createContext } from 'react';
+import { UserContext } from '../App';
+import { useNavigation } from '@react-navigation/native';
 
 
 const value = React.createContext(UserContext);
@@ -15,8 +15,12 @@ const value = React.createContext(UserContext);
 // let value = React.useContext(UserContext);
 
 export default function AlbumAccueil() {
-
+    const value = React.useContext(UserContext);
+    console.log(value.admin)
+    // value.admin = "ufieuf"
+    // console.log(value);
     const [utilisateur, setUtilisateur] = useState("")
+    const navigation = useNavigation();
 
 
     function handlerUtilisateur(data) {
@@ -37,17 +41,16 @@ export default function AlbumAccueil() {
             .then((dataJSON) => {
                 console.log(dataJSON)
                 setUtilisateur(dataJSON)
-                console.log(dataJSON.pseudo)
+                // console.log(dataJSON.pseudo)
                 value.pseudo = dataJSON.pseudo
                 value.admin = dataJSON.admin
-                console.log(UserContext)
+                console.log(value)
+                navigation.replace("Accueil");
+                
+                
 
             })
             .catch((error) => console.log(error));
-
-        // window.location.replace(
-        //     "/"
-        //   );
     }
 
     return (

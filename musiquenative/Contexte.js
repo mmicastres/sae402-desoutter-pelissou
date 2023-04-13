@@ -2,6 +2,8 @@ import React from "react"
 
 export const UserContext = React.createContext({pseudo: '', admin: '0'});
 
+// console.log(UserContext);
+
 // import React, { createContext, useState } from 'react';
 
 // export const UserContext = createContext({pseudo :'', admin : ''});
