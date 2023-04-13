@@ -9,6 +9,8 @@ import RechercheView from './screens/RechercheView';
 import AlbumView from './screens/AlbumView';
 import TitreView from './screens/TitreView';
 import { Ionicons } from '@expo/vector-icons';
+import { UserContext} from './Contexte';
+import { useState, useEffect } from 'react';
 
 
 
@@ -37,7 +39,16 @@ function ConnexionTabNavigator() {
 }
 
 export default function App() {
+  // const value = React.useContext(UserContext);
+
+  // const [connecte, setConnecte] = useState("0");
+  // useEffect(() =>
+  // setConnecte(value.admin)
+  // )
+  // console.log(connecte)
+  // if (connecte == 0){
   return (
+    // <UserContext.Provider value={connecte}>
     <NavigationContainer>
       <Tab.Navigator
         screenOptions={{
@@ -76,6 +87,91 @@ export default function App() {
 
         </Tab.Navigator>
     </NavigationContainer>
-
+    // </UserContext.Provider>
   );
+// }else{
+//   return (
+//     <UserContext.Provider value={connecte}>
+//     <NavigationContainer>
+//       <Tab.Navigator
+//         screenOptions={{
+//           tabBarStyle: { position: 'absolute', backgroundColor:'#EADDFF' },
+//         }}>
+//         <Tab.Screen
+//           name="Accueil"
+//           component={MainTabNavigator}
+//           options={{
+//             headerShown: false,
+//             tabBarLabel: 'Accueil',
+//             tabBarIcon: ({size }) => (
+//               <Ionicons name="home" color="black" size={size} />
+//             ),
+//           }} />
+//         <Tab.Screen
+//           name="Recherche"
+//           component={RechercheView}
+//           options={{
+//             headerShown: false,
+//             tabBarLabel: 'Recherche',
+//             tabBarIcon: ({size }) => (
+//               <Ionicons name="search" color="black" size={size} />
+//             ),
+//           }}
+//         />
+//         <Tab.Screen
+//           name="Connexion"
+//           component={ConnexionView} options={{
+//             headerShown: false,
+//             tabBarLabel: 'Profil',
+//             tabBarIcon: ({size }) => (
+//               <Ionicons name="person" color="black" size={size}/>
+//             ),
+//           }} />
+//       </Tab.Navigator>
+//     </NavigationContainer>
+//     </UserContext.Provider>
+//   );
+// }
 }
+// if (value.admin == 1){
+//   return(
+//   <NavigationContainer>
+//     <Tab.Navigator
+//       screenOptions={{
+//         tabBarStyle: { position: 'absolute', backgroundColor:'#EADDFF' },
+//       }}>
+//       <Tab.Screen
+//         name="Accueil"
+//         component={MainTabNavigator}
+//         options={{
+//           headerShown: false,
+//           tabBarLabel: 'Accueil',
+//           tabBarIcon: ({size }) => (
+//             <Ionicons name="home" color="black" size={size} />
+//           ),
+//         }} />
+//       <Tab.Screen
+//         name="Recherche"
+//         component={RechercheView}
+//         options={{
+//           headerShown: false,
+//           tabBarLabel: 'Recherche',
+//           tabBarIcon: ({size }) => (
+//             <Ionicons name="search" color="black" size={size} />
+//           ),
+//         }}
+//       />
+//       <Tab.Screen
+//         name="Connexion"
+//         component={ConnexionView} options={{
+//           headerShown: false,
+//           tabBarLabel: 'Administrer',
+//           tabBarIcon: ({size }) => (
+//             <Ionicons name="person" color="black" size={size}/>
+//           ),
+//         }} />
+//     </Tab.Navigator>
+//   </NavigationContainer>
+
+// );
+
