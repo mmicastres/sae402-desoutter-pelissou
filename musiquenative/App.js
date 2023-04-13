@@ -10,6 +10,7 @@ import RechercheView from './screens/RechercheView';
 import UtilisateurView from './screens/UtilisateurView';
 import AlbumView from './screens/AlbumView';
 import TitreView from './screens/TitreView';
+import AjoutView from './screens/AjoutView';
 import { Ionicons } from '@expo/vector-icons';
 import { UserContext} from './Contexte';
 import { useState, useEffect } from 'react';
@@ -26,6 +27,7 @@ function MainTabNavigator() {
       <Stack.Screen name="Album" component={AlbumView} />
       <Stack.Screen name="Titre" component={TitreView} />
       <Stack.Screen name="Utilisateur" component={UtilisateurView} />
+      <Stack.Screen name="Ajout-Album" component={AjoutView} options={{ headerShown: false }} />
     </Stack.Navigator>
 
   );

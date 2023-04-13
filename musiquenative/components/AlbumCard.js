@@ -14,7 +14,7 @@ export default function AlbumCard(data){
             cover: data.cover,
         });
     }
-
+    console.log(data.cover)
     return (
         <View>
 

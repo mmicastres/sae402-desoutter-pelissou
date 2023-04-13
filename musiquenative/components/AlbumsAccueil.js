@@ -29,11 +29,10 @@ export default function AlbumAccueil() {
     useEffect(() => {
         AlbumAccueil()
     }, [])
-
     return (
         <View style = {styles.albumContainer}>
             {lAlbums.map((a) =>
-                <AlbumCard titre = {a.titre} cover = {a.cover} id = {a.id_album}></AlbumCard>
+                <AlbumCard titre = {a.titre} cover = {a.pochette} id = {a.id_album}></AlbumCard>
             )}
         </View>
     )
