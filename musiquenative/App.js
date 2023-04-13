@@ -7,6 +7,7 @@ import AccueilView from './screens/AccueilView';
 import ConnexionView from './screens/ConnexionViews';
 import RechercheView from './screens/RechercheView';
 import AlbumView from './screens/AlbumView';
+import { Ionicons } from '@expo/vector-icons';
 
 
 
@@ -27,10 +28,40 @@ function MainTabNavigator() {
 export default function App() {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="Accueil" component={MainTabNavigator}  options={{ headerShown: false }} />
-        <Tab.Screen name="Recherche" component={RechercheView} />
-        <Tab.Screen name="Connexion" component={ConnexionView} />
+      <Tab.Navigator
+        screenOptions={{
+          tabBarStyle: { position: 'absolute', backgroundColor:'#EADDFF' },
+        }}>
+        <Tab.Screen
+          name="Accueil"
+          component={MainTabNavigator}
+          options={{
+            headerShown: false,
+            tabBarLabel: 'Accueil',
+            tabBarIcon: ({size }) => (
+              <Ionicons name="home" color="black" size={size} />
+            ),
+          }} />
+        <Tab.Screen
+          name="Recherche"
+          component={RechercheView}
+          options={{
+            headerShown: false,
+            tabBarLabel: 'Recherche',
+            tabBarIcon: ({size }) => (
+              <Ionicons name="search" color="black" size={size} />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Connexion"
+          component={ConnexionView} options={{
+            headerShown: false,
+            tabBarLabel: 'Profil',
+            tabBarIcon: ({size }) => (
+              <Ionicons name="person" color="black" size={size}/>
+            ),
+          }} />
       </Tab.Navigator>
     </NavigationContainer>
 

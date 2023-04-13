@@ -34,7 +34,6 @@ export default function AlbumCard(data){
                     value = {data.titre}
                     title="Voir"
                     color="#841584"
-                    accessibilityLabel="Learn more about this purple button"
                 />
             </Card>
         </View>

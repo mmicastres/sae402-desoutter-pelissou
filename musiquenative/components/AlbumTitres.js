@@ -4,9 +4,14 @@ import { View, Text, StyleSheet } from 'react-native';
 export default function AlbumTitres(data) {
   console.log(data.listTitre);
 
-if (data.length == 0 ){
+if (data.listTitre.length == 0 ){
   return (
-    <View style={styles.container}>
+    <Text style={styles.heading}>Aucun Titre</Text>
+  );
+}
+else{
+  return(
+  <View style={styles.container}>
       <Text style={styles.heading}>Liste des titres :</Text>
       <View style={styles.list}>
         {data.listTitre.map((t) => (
@@ -16,11 +21,6 @@ if (data.length == 0 ){
         ))}
       </View>
     </View>
-  );
-}
-else{
-  return(
-  <Text style={styles.heading}>Aucun Titre</Text>
   )
 }
   
