@@ -11,7 +11,7 @@ const [recherche, setRecherche] = useState("");
 let handleRecherche = (v) => setRecherche(v);
   
     return (
-        <View>
+        <View style={styles.container}>
             <Text>Recherche</Text>
             <FormRecherche handler={handleRecherche}  />
             <ListeRecherche precherche= {recherche}/>
@@ -22,9 +22,8 @@ let handleRecherche = (v) => setRecherche(v);
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
         backgroundColor: '#fff',
         alignItems: 'center',
-        justifyContent: 'center',
+        height:'100%'
     },
 });
