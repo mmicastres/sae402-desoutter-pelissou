@@ -7,6 +7,7 @@ import FormConnexion from './FormConnexion';
 import React from "react";
 import { useState, useEffect } from 'react';
 import { UserContext } from '../App';
+import { useNavigation } from '@react-navigation/native';
 
 
 
@@ -20,6 +21,7 @@ export default function AlbumAccueil() {
     // value.admin = "ufieuf"
     // console.log(value);
     const [utilisateur, setUtilisateur] = useState("")
+    const navigation = useNavigation();
 
 
     function handlerUtilisateur(data) {
@@ -44,13 +46,12 @@ export default function AlbumAccueil() {
                 value.pseudo = dataJSON.pseudo
                 value.admin = dataJSON.admin
                 console.log(value)
+                navigation.replace("Accueil");
+                
+                
 
             })
             .catch((error) => console.log(error));
-
-        // window.location.replace(
-        //     "/"
-        //   );
     }
 
     return (

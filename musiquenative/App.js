@@ -20,6 +20,7 @@ const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 function MainTabNavigator() {
+
   return (
     <Stack.Navigator>
       <Stack.Screen name="Accueil" component={AccueilView} options={{ headerShown: false }} />
