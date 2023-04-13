@@ -1,8 +1,26 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { useState } from 'react';
+import TitreCard from './TitreCard';
 
 export default function AlbumTitres(data) {
+  const [titre, setTitre] = useState([])
   console.log(data.listTitre);
+
+  let handlePress = (t) =>{
+    // navigation.navigate('Titre', {
+    //     id: data.idTitre,
+    //     titre: data.titre,
+    //     lien: data.lien,
+    //     paroles: data.paroles,
+    //     pseudo: data.pseudo,
+    //     idAlbum: data.idAlbum,
+    //     pochette: data.pochette
+    // });
+    // console.log(e)
+    console.log("test")
+    console.log(t)
+  }
 
 if (data.listTitre.length == 0 ){
   return (
@@ -13,11 +31,9 @@ else{
   return(
   <View style={styles.container}>
       <Text style={styles.heading}>Liste des titres :</Text>
-      <View style={styles.list}>
+      <View>
         {data.listTitre.map((t) => (
-          <Text style={styles.item}>
-            {t.titre}
-          </Text>
+            <TitreCard idTitre = {t.id_titre} titre = {t.titre} idAlbum={t.id_album} paroles = {t.paroles} pochette = {t.pochette} pseudo = {t.pseudo} lien = {t.lien}></TitreCard>
         ))}
       </View>
     </View>
