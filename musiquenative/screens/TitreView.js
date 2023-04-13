@@ -34,6 +34,7 @@ export default function TitreView() {
       container: {
         flex: 1,
         backgroundColor: '#FFF',
+        textAlign:'center'
       },
       albumCoverContainer: {
         alignItems: 'center',
@@ -70,9 +71,11 @@ export default function TitreView() {
         marginHorizontal: 20,
         marginBottom: 40,
         backgroundColor: '#F9F2F2',
+        textAlign:'center',
       },
       paroles: {
         fontSize: 18,
         textAlign: 'justify',
+        textAlign:'center',
       },
     });
