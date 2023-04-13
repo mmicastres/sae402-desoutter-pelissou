@@ -6,63 +6,31 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import AccueilView from './screens/AccueilView';
 import ConnexionView from './screens/ConnexionViews';
 import RechercheView from './screens/RechercheView';
+import AlbumView from './screens/AlbumView';
 
-function AccueilScreen() {
-  const Stack = createNativeStackNavigator();
+
+
+const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
+
+function MainTabNavigator() {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="Accueil" component={AccueilView} />
-    </Stack.Navigator>
-  )
+    <Tab.Navigator>
+      <Tab.Screen name="Accueil" component={AccueilView} />
+      <Tab.Screen name="Recherche" component={RechercheView} />
+      <Tab.Screen name="Connexion" component={ConnexionView} />
+    </Tab.Navigator>
+  );
 }
-
-function RechercheScreen() {
-  const StackRecherche = createNativeStackNavigator();
-  return (
-    <StackRecherche.Navigator>
-      <StackRecherche.Screen name="Recherche" component={RechercheView} />
-    </StackRecherche.Navigator>
-  )
-}
-
-function ConnexionScreen() {
-  const StackConnexion = createNativeStackNavigator();
-  return (
-    <StackConnexion.Navigator>
-      <StackConnexion.Screen name="Connexion" component={ConnexionView} />
-    </StackConnexion.Navigator>
-  )
-}
-
 
 export default function App() {
-  const Tab = createBottomTabNavigator();
   return (
     <NavigationContainer>
-      <Tab.Navigator
-        screenOptions={({ route }) => ({
-          tabBarActiveTintColor: 'green',
-          tabBarInactiveTintColor: 'gray',
-          headerShown: false
-        })}
-      >
-        <Tab.Screen
-          name="Accueil"
-          component={AccueilScreen}
-        />
-
-        <Tab.Screen
-          name="Recherche"
-          component={RechercheScreen}
-        />
-
-        <Tab.Screen
-          name="Connexion"
-          component={ConnexionScreen}
-        />
-      </Tab.Navigator>
+      <Stack.Navigator>
+        <Stack.Screen name="Accueil" component={MainTabNavigator} options={{ headerShown: false }} />
+        <Stack.Screen name="Album" component={AlbumView} />
+        {/* <Stack.Screen name="Titre" component={TitreView} /> */}
+      </Stack.Navigator>
     </NavigationContainer>
-
-
   );
 }
