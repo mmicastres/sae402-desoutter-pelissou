@@ -3,11 +3,20 @@ import { Link } from '@react-navigation/native';
 //    import { Card, ListItem, Button, Icon } from 'react-native-elements'
 import { Card } from '@rneui/themed';
 import { useNavigation } from '@react-navigation/native';
+// import { UserContext } from '../Contexte';
+import { UserContext } from '../App';
+import React, { useEffect } from 'react';
 
 
-export default function AlbumCard(data){
+export default function AlbumCard(data) {
+    let value = React.useContext(UserContext);
+    console.log(value)
+
+    
+    console.log("Album", value.admin)
     const navigation = useNavigation();
-    let handlePress = () =>{
+    let handlePress = () => {
+        console.log(value)
         navigation.navigate('Album', {
             id: data.id,
             titre: data.titre,
@@ -15,9 +24,9 @@ export default function AlbumCard(data){
         });
     }
 
+    if (value.admin == "1") {
     return (
         <View>
-
             <Card style={styles.card}>
                 <Image
                     style={styles.tinyLogo}
@@ -31,16 +40,48 @@ export default function AlbumCard(data){
                 </Text>
                 <Button
                     onPress={handlePress}
-                    value = {data.titre}
+                    value={data.titre}
                     title="Voir"
+                    color="#841584"
+                />
+                <Button
+                    value='SUPPRIMER'
+                    title='SUPPRIMER'
                     color="#841584"
                 />
             </Card>
         </View>
     )
 }
+else{
+
+    return (
+        <View>
+            <Card style={styles.card}>
+                <Image
+                    style={styles.tinyLogo}
+                    source={{
+                        uri: 'https://static.750g.com/images/1200-630/0ed2e88c83811daea7c60e278de11b08/adobestock-28409562.jpeg',
+                    }}
+                />
+
+                <Text style={styles.textCard}>
+                    {data.titre}
+                </Text>
+                <Button
+                    onPress={handlePress}
+                    value={data.titre}
+                    title="Voir"
+                    color="#841584"
+                />
+            </Card>
+        </View>
+    )
+
+}
+}
 const styles = StyleSheet.create({
-  
+
     card: {
         display: 'flex',
         color: 'blue',
