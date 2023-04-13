@@ -1,4 +1,4 @@
-import { View, Text, Image, Button, StyleSheet } from 'react-native'
+import { View, Text, Image, Button, StyleSheet,TouchableOpacity } from 'react-native'
 import { Link } from '@react-navigation/native';
 //    import { Card, ListItem, Button, Icon } from 'react-native-elements'
 import { Card } from '@rneui/themed';
@@ -6,22 +6,25 @@ import { useNavigation } from '@react-navigation/native';
 
 
 export default function UtilisateurCard(data){
+
+  console.log(data);
+
     const navigation = useNavigation();
-    // let handlePress = () =>{
-    //     navigation.navigate('Album', {
-    //         id: data.id,
-    //         titre: data.titre,
-    //         cover: data.cover,
-    //     });
-    // }
+    let handlePress = () =>{
+        navigation.navigate('Utilisateur', {
+          pseudo : data.pseudo
+        });
+    }
 
     return (
         <View style={styles.card}>
+          <TouchableOpacity style={styles.button} onPress={handlePress}>
           <Image style={styles.avatar} source={{uri: 'https://static.750g.com/images/1200-630/0ed2e88c83811daea7c60e278de11b08/adobestock-28409562.jpeg'}} />
           <View style={styles.details}>
             <Text style={styles.name}>{data.pseudo}</Text>
             <Text style={styles.email}>{data.date}</Text>
           </View>
+          </TouchableOpacity>
         </View>
       );
     }

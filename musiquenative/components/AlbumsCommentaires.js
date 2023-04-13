@@ -1,15 +1,23 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 export default function AlbumCommentaires(data) {
     console.log(data)
+    const navigation = useNavigation();
+    let handlePress = () =>{
+        navigation.navigate('Utilisateur', {
+            pseudo : data.auteur
+        });
+    }
+
     return (
 
         <View style={styles.card}>
             <View style={styles.header}>
                 <View style={styles.user}>
                     <Image source={{ uri: "https://static.750g.com/images/1200-630/0ed2e88c83811daea7c60e278de11b08/adobestock-28409562.jpeg" }} style={styles.avatar} />
-                    <Text style={styles.username}>{data.pseudo}</Text>
+                    <Text onPress={handlePress} style={styles.username}>{data.auteur}</Text>
                 </View>
                 <View style={styles.rating}>
                     <Text style={styles.ratingText}>{data.note}</Text>

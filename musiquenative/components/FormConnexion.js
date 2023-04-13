@@ -1,7 +1,8 @@
 import * as React from "react";
 import { View, Text, TextInput, Button, StyleSheet } from "react-native";
 import { useState } from "react";
-import Utilisateurs from "../classes/Utilisateurs"
+import Utilisateurs from "../classes/Utilisateurs";
+import { useNavigation } from '@react-navigation/native';
 //  import { userAdmin } from "../../App"
 
 
@@ -31,8 +32,10 @@ export default function FormConnexion(props) {
     console.log(data);
     props.handlerUtilisateur(data);
   }
-
-
+  const navigation = useNavigation();
+    let handlePress = () =>{
+      navigation.navigate('Inscription',{});
+  }
 
 
 
@@ -71,7 +74,7 @@ export default function FormConnexion(props) {
         onPress={handleSubmit}
       >
       </Button>
-      <Text>Vous n'avez pas de compte ? Inscription</Text>
+      <Button onPress={handlePress} title="Vous n'avez pas de compte ? Inscription"></Button>
     </View>
   );
 }

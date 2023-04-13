@@ -5,7 +5,9 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import AccueilView from './screens/AccueilView';
 import ConnexionView from './screens/ConnexionViews';
+import InscriptionView from './screens/InscriptionView';
 import RechercheView from './screens/RechercheView';
+import UtilisateurView from './screens/UtilisateurView';
 import AlbumView from './screens/AlbumView';
 import TitreView from './screens/TitreView';
 import { Ionicons } from '@expo/vector-icons';
@@ -23,6 +25,7 @@ function MainTabNavigator() {
       <Stack.Screen name="Accueil" component={AccueilView} options={{ headerShown: false }} />
       <Stack.Screen name="Album" component={AlbumView} />
       <Stack.Screen name="Titre" component={TitreView} />
+      <Stack.Screen name="Utilisateur" component={UtilisateurView} />
     </Stack.Navigator>
 
   );
@@ -32,20 +35,20 @@ function ConnexionTabNavigator() {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Connexion" component={ConnexionView} options={{ headerShown: false }} />
-      {/* <Stack.Screen name="Titre" component={TitreView} /> */}
+      <Stack.Screen name="Inscription" component={InscriptionView} options={{ headerShown: false }} />
     </Stack.Navigator>
 
   );
 }
 
 export default function App() {
-  // const value = React.useContext(UserContext);
+  React.useContext(UserContext);
 
-  // const [connecte, setConnecte] = useState("0");
-  // useEffect(() =>
-  // setConnecte(value.admin)
-  // )
-  // console.log(connecte)
+  const [connecte, setConnecte] = useState("0");
+  useEffect(() =>
+  setConnecte(UserContext.admin)
+  )
+  console.log(UserContext._currentValue)
   // if (connecte == 0){
   return (
     // <UserContext.Provider value={connecte}>
@@ -77,7 +80,7 @@ export default function App() {
         />
         <Tab.Screen
           name="Connexion"
-          component={ConnexionView} options={{
+          component={ConnexionTabNavigator} options={{
             headerShown: false,
             tabBarLabel: 'Profil',
             tabBarIcon: ({ size }) => (
