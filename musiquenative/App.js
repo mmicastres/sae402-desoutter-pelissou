@@ -15,22 +15,24 @@ const Tab = createBottomTabNavigator();
 
 function MainTabNavigator() {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="Accueil" component={AccueilView} />
-      <Tab.Screen name="Recherche" component={RechercheView} />
-      <Tab.Screen name="Connexion" component={ConnexionView} />
-    </Tab.Navigator>
+    <Stack.Navigator>
+      <Stack.Screen name="Accueil" component={AccueilView} options={{ headerShown: false }} />
+      <Stack.Screen name="Album" component={AlbumView} />
+      {/* <Stack.Screen name="Titre" component={TitreView} /> */}
+    </Stack.Navigator>
+
   );
 }
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Accueil" component={MainTabNavigator} options={{ headerShown: false }} />
-        <Stack.Screen name="Album" component={AlbumView} />
-        {/* <Stack.Screen name="Titre" component={TitreView} /> */}
-      </Stack.Navigator>
+      <Tab.Navigator>
+        <Tab.Screen name="Accueil" component={MainTabNavigator}  options={{ headerShown: false }} />
+        <Tab.Screen name="Recherche" component={RechercheView} />
+        <Tab.Screen name="Connexion" component={ConnexionView} />
+      </Tab.Navigator>
     </NavigationContainer>
+
   );
 }
