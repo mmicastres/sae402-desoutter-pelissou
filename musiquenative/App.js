@@ -24,13 +24,23 @@ function MainTabNavigator() {
   );
 }
 
+function ConnexionTabNavigator(){
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Connexion" component={ConnexionView} options={{ headerShown: false }} />
+      {/* <Stack.Screen name="Titre" component={TitreView} /> */}
+    </Stack.Navigator>
+
+  );
+}
+
 export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator>
         <Tab.Screen name="Accueil" component={MainTabNavigator}  options={{ headerShown: false }} />
-        <Tab.Screen name="Recherche" component={RechercheView} />
-        <Tab.Screen name="Connexion" component={ConnexionView} />
+        <Tab.Screen name="Recherche" component={RechercheView}  />
+        <Tab.Screen name="Connexion" component={ConnexionTabNavigator} options={{ headerShown: false }} />
       </Tab.Navigator>
     </NavigationContainer>
 
