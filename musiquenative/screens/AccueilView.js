@@ -15,11 +15,6 @@ export default function AccueilView() {
         <View style={styles.container}>
             <Text style={styles.textStyle}>Les derniers albums : </Text>
             <AlbumAccueil></AlbumAccueil>
-            <Button
-                title="Go to Details"
-                onPress={(e) => navigation.navigate('Album', {id: '5'})}
-
-            />
         </View>
     )
 }
