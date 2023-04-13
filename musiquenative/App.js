@@ -7,6 +7,7 @@ import AccueilView from './screens/AccueilView';
 import ConnexionView from './screens/ConnexionViews';
 import RechercheView from './screens/RechercheView';
 import AlbumView from './screens/AlbumView';
+import TitreView from './screens/TitreView';
 import { Ionicons } from '@expo/vector-icons';
 
 
@@ -19,7 +20,7 @@ function MainTabNavigator() {
     <Stack.Navigator>
       <Stack.Screen name="Accueil" component={AccueilView} options={{ headerShown: false }} />
       <Stack.Screen name="Album" component={AlbumView} />
-      {/* <Stack.Screen name="Titre" component={TitreView} /> */}
+      <Stack.Screen name="Titre" component={TitreView} />
     </Stack.Navigator>
 
   );

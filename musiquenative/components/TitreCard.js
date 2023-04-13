@@ -1,33 +1,38 @@
-import { View, Text, Image, Button, StyleSheet } from 'react-native'
+import { View, Text, Image, Button, StyleSheet, TouchableOpacity } from 'react-native'
 import { Link } from '@react-navigation/native';
 //    import { Card, ListItem, Button, Icon } from 'react-native-elements'
 import { Card } from '@rneui/themed';
 import { useNavigation } from '@react-navigation/native';
 
 
-export default function TitreCard(data){
+export default function TitreCard(data) {
     const navigation = useNavigation();
-    // let handlePress = () =>{
-    //     navigation.navigate('Titre', {
-    //         id: data.id,
-    //         titre: data.titre,
-    //         cover: data.cover,
-    //     });
-    // }
+    let handlePress = () =>{
+        navigation.navigate('Titre', {
+            id: data.idTitre,
+            titre: data.titre,
+            lien: data.lien,
+            paroles: data.paroles,
+            pseudo: data.pseudo,
+            idAlbum: data.idAlbum,
+            pochette: data.pochette
+        });
+    }
 
     return (
         <View>
-
-            <Card style={styles.card}>
-                <Text style={styles.textCard}>
-                    {data.titre}
-                </Text>
-            </Card>
+            <TouchableOpacity style={styles.button} onPress={handlePress}>
+                <Card style={styles.card}>
+                    <Text style={styles.textCard}>
+                        {data.titre}
+                    </Text>
+                </Card>
+            </TouchableOpacity>
         </View>
     )
 }
 const styles = StyleSheet.create({
-  
+
     card: {
         display: 'flex',
         color: 'blue',
