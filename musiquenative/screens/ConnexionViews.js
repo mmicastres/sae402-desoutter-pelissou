@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import ConnexionAccueil from '../components/ConnexionAccueil';
-import { StyleSheet, Text, View } from 'react-native';
+import {SafeAreaView, StyleSheet, TextInput, Text} from 'react-native';
 import * as React from 'react';
 
 export default function ConnexionView(){

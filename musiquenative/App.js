@@ -25,7 +25,7 @@ function MainTabNavigator() {
   );
 }
 
-function ConnexionTabNavigator(){
+function ConnexionTabNavigator() {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Connexion" component={ConnexionView} options={{ headerShown: false }} />
@@ -38,10 +38,9 @@ function ConnexionTabNavigator(){
 export default function App() {
   return (
     <NavigationContainer>
-<<<<<<< HEAD
       <Tab.Navigator
         screenOptions={{
-          tabBarStyle: { position: 'absolute', backgroundColor:'#EADDFF' },
+          tabBarStyle: { position: 'absolute', backgroundColor: '#EADDFF' },
         }}>
         <Tab.Screen
           name="Accueil"
@@ -49,7 +48,7 @@ export default function App() {
           options={{
             headerShown: false,
             tabBarLabel: 'Accueil',
-            tabBarIcon: ({size }) => (
+            tabBarIcon: ({ size }) => (
               <Ionicons name="home" color="black" size={size} />
             ),
           }} />
@@ -59,7 +58,7 @@ export default function App() {
           options={{
             headerShown: false,
             tabBarLabel: 'Recherche',
-            tabBarIcon: ({size }) => (
+            tabBarIcon: ({ size }) => (
               <Ionicons name="search" color="black" size={size} />
             ),
           }}
@@ -69,17 +68,12 @@ export default function App() {
           component={ConnexionView} options={{
             headerShown: false,
             tabBarLabel: 'Profil',
-            tabBarIcon: ({size }) => (
-              <Ionicons name="person" color="black" size={size}/>
+            tabBarIcon: ({ size }) => (
+              <Ionicons name="person" color="black" size={size} />
             ),
           }} />
-=======
-      <Tab.Navigator>
-        <Tab.Screen name="Accueil" component={MainTabNavigator}  options={{ headerShown: false }} />
-        <Tab.Screen name="Recherche" component={RechercheView}  />
-        <Tab.Screen name="Connexion" component={ConnexionTabNavigator} options={{ headerShown: false }} />
->>>>>>> ca9db15a53d947e3f738ec0b726ee6f38c44c844
-      </Tab.Navigator>
+
+        </Tab.Navigator>
     </NavigationContainer>
 
   );
