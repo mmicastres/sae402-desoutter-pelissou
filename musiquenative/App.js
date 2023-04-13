@@ -25,9 +25,20 @@ function MainTabNavigator() {
   );
 }
 
+function ConnexionTabNavigator(){
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Connexion" component={ConnexionView} options={{ headerShown: false }} />
+      {/* <Stack.Screen name="Titre" component={TitreView} /> */}
+    </Stack.Navigator>
+
+  );
+}
+
 export default function App() {
   return (
     <NavigationContainer>
+<<<<<<< HEAD
       <Tab.Navigator
         screenOptions={{
           tabBarStyle: { position: 'absolute', backgroundColor:'#EADDFF' },
@@ -62,6 +73,12 @@ export default function App() {
               <Ionicons name="person" color="black" size={size}/>
             ),
           }} />
+=======
+      <Tab.Navigator>
+        <Tab.Screen name="Accueil" component={MainTabNavigator}  options={{ headerShown: false }} />
+        <Tab.Screen name="Recherche" component={RechercheView}  />
+        <Tab.Screen name="Connexion" component={ConnexionTabNavigator} options={{ headerShown: false }} />
+>>>>>>> ca9db15a53d947e3f738ec0b726ee6f38c44c844
       </Tab.Navigator>
     </NavigationContainer>
 
