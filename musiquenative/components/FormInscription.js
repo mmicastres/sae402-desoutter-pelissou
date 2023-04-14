@@ -40,7 +40,6 @@ export default function FormInscription(props) {
     const navigation = useNavigation();
     let handlePress = () => {
         navigation.navigate('Inscription', {});
-        console.log("BONJOUR")
     }
 
 
@@ -79,6 +78,7 @@ export default function FormInscription(props) {
                 placeholder="Mot de passe"
                 type="password"
                 id="password"
+                secureTextEntry={true}
                 autoComplete="new-password"
                 onChange={HandleChangeMdp}
                 onChangeText={setMdp}

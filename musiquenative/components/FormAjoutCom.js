@@ -11,9 +11,10 @@ import { UserContext } from '../App';
 
 
 
-    export default function FormAjoutCom(props) {
-
-        // Instancing all needed variables to create a new Comment
+export default function FormAjoutCom(props) {
+    
+    // Instancing all needed variables to create a new Comment
+    
 
         let pseudo = "Poulet";
         let id_album = props.id_album;
@@ -44,7 +45,8 @@ import { UserContext } from '../App';
                 <Picker
                             selectedValue={note}
                             onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
-                        >   
+                        >       
+                                <Picker.Item value="Choisir une Note" label={"Choisir une Note"}>/</Picker.Item>
                                 <Picker.Item value="1" label={1}>/</Picker.Item>
                                 <Picker.Item value="2" label={2}>/</Picker.Item>
                                 <Picker.Item value="3" label={3}>/</Picker.Item>

@@ -41,13 +41,13 @@ export default function FormulaireAjoutAlbum(props) {
 
     const date = new Date();
     let date_ajout = date.toJSON().slice(0, 10);
-    let pseudo = `Poulet`;
+    let pseudo = `${value.pseudo}`;
     let valide = 0;
 
     const [titre, setTitre] = useState("");
     const [sortie_album, setSortie_album] = useState("");
     const [pochette, setPochette] = useState("");
-    const [nom_categorie, setCategorie] = useState("Pop");
+    const [nom_categorie, setSelectedValue] = useState("Pop");
 
 
     const HandleChangeTitre = (event) => setTitre(event.target.value);

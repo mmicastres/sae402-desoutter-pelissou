@@ -24,9 +24,10 @@ export default function TitreView() {
           <View style={styles.parolesContainer}>
             <GetAnecdote idtitre = {id}></GetAnecdote>
           </View>
-          <View>
-          </View>
+          <View style={styles.parolesContainer}>
+            <Text style={styles.title}>Paroles :</Text>
             <Text style={styles.paroles}>{paroles}</Text>
+          </View>
         </ScrollView>
       );
     }

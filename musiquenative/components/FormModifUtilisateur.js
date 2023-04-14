@@ -63,7 +63,6 @@ export default function FormAjoutAlbum(props) {
 
     return (
         <View>
-            <Text>Mettre a jour le Mot de Passe :</Text>
             <TextInput
             style={styles.input}
                 fullWidth
@@ -73,7 +72,6 @@ export default function FormAjoutAlbum(props) {
                 value={mdp}
                 onChange={HandleChangeMdp}
             />
-            <Text>Mettre a jour la photo de profil :</Text>
             <TextInput
             
                 fullWidth

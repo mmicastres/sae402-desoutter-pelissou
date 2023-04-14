@@ -13,7 +13,7 @@ export default function GetAnecdote(data) {
 
     function getRecherche() {
         const url =
-            `https://sae301.alwaysdata.net/api/titres/${data.idtitre}/anecdotes`;
+            `https://sae301.alwaysdata.net/api/titres/${data.contenu}/anecdotes`;
         const fetchOptions = {
             method: "GET"
         };
@@ -31,16 +31,14 @@ export default function GetAnecdote(data) {
         getRecherche()
         }, [data])
 
-        console.log(anecdote.length)
+        console.log(anecdote.contenu)
 
-        if(anecdote.length != 0){
             return(
                 <View>
                 <Text>{anecdote.contenu}</Text>
                 <AjoutAnecdoteAccueil idtitre = {data.idtitre}></AjoutAnecdoteAccueil>
                 </View>
             )
-        }
 }
 
 

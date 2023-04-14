@@ -12,8 +12,8 @@ import AlbumCommentaires from './AlbumsCommentaires';
 export default function GetUtilisateur(data) {
     console.log(data.pseudo);
     const [utilisateur, setUtilisateur] = useState([])
-    const [artiste,setArtiste] = useState([])
-    const [commentaire,setCommentaire] = useState([])
+    const [artiste, setArtiste] = useState([])
+    const [commentaire, setCommentaire] = useState([])
 
     // Get all informations about the user
 
@@ -36,7 +36,7 @@ export default function GetUtilisateur(data) {
     useEffect(() => {
         getUtilisateur()
     }, [data])
-    
+
 
     // Verify if the user clicked has any albums
 
@@ -58,7 +58,7 @@ export default function GetUtilisateur(data) {
     }
     useEffect(() => {
         getArtiste()
-    }, [data])    
+    }, [data])
 
 
 
@@ -83,15 +83,14 @@ export default function GetUtilisateur(data) {
     }
     useEffect(() => {
         getCommentaire()
-    }, [data])    
+    }, [data])
 
 
 
 
 
     console.log(commentaire)
-
-
+    console.log(artiste)
 
     if (utilisateur.length != 0) {
         return (
@@ -99,11 +98,11 @@ export default function GetUtilisateur(data) {
                 <Text>{utilisateur.date_inscription}</Text>
                 <Image style={styles.albumCover} source={{ uri: `${utilisateur.pp}` }} />
                 {artiste.map((t) => (
-            <AlbumCard idTitre = {t.id_titre} titre = {t.titre} idAlbum={t.id_album} paroles = {t.paroles} pochette = {t.pochette} pseudo = {t.pseudo} lien = {t.lien}></AlbumCard>
-        ))}
-         {commentaire.map((c) => (
-            <AlbumCommentaires contenu={c.commentaire} auteur={c.pseudo} date={c.date_ajout_com} note={c.note}></AlbumCommentaires>
-        ))}
+                    <AlbumCard idTitre={t.id_titre} titre={t.titre} idAlbum={t.id_album} paroles={t.paroles} pochette={t.pochette} pseudo={t.pseudo} lien={t.lien}></AlbumCard>
+                ))}
+                {commentaire.map((c) => (
+                    <AlbumCommentaires contenu={c.commentaire} auteur={c.pseudo} date={c.date_ajout_com} note={c.note}></AlbumCommentaires>
+                ))}
             </View>
         )
     }
@@ -111,10 +110,10 @@ export default function GetUtilisateur(data) {
 }
 
 const styles = StyleSheet.create({
-albumCover: {
-    height: 250,
-    wpseudoth: 250,
-    borderRadius: 10,
-  }
+    albumCover: {
+        height: 250,
+        wpseudoth: 250,
+        borderRadius: 10,
+    }
 }
 )
