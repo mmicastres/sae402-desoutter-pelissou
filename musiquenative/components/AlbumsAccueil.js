@@ -21,7 +21,7 @@ export default function AlbumAccueil() {
             })
             .then((dataJSON) => {
                 console.log(dataJSON);
-                setAlbums(dataJSON)
+                setAlbums(dataJSON.slice(4))
             })
             .catch((error) => console.log(error));
     }

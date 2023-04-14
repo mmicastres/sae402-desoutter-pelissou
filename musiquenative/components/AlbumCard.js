@@ -31,7 +31,7 @@ export default function AlbumCard(data) {
                 <Image
                     style={styles.tinyLogo}
                     source={{
-                        uri: 'https://static.750g.com/images/1200-630/0ed2e88c83811daea7c60e278de11b08/adobestock-28409562.jpeg',
+                        uri: `${data.cover}`,
                     }}
                 />
 
@@ -61,7 +61,7 @@ else{
                 <Image
                     style={styles.tinyLogo}
                     source={{
-                        uri: 'https://static.750g.com/images/1200-630/0ed2e88c83811daea7c60e278de11b08/adobestock-28409562.jpeg',
+                        uri: `${data.cover}`,
                     }}
                 />
 

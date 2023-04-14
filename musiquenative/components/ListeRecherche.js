@@ -58,4 +58,5 @@ export default function ListeRecherche(data) {
 const styles = StyleSheet.create({
     scroll: {
       heigth:'100%',
+      width:'100%'
   }});
