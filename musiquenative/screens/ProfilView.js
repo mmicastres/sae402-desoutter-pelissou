@@ -4,10 +4,9 @@ import * as React from 'react';
 import { useRoute } from '@react-navigation/native';
 import ListeTitresAlbum from '../components/ListeTitresAlbum';
 import ListeComsAlbums from '../components/ListeComsAlbum';
-import GetAnecdote from '../components/GetAnecdote';
-import GetUtilisateur from '../components/GetUtilisateur';
+import GetProfil from '../components/GetProfil';
 
-export default function UtilisateurView() {
+export default function ProfilView() {
     const route = useRoute();
     const pseudo = route.params.pseudo;
     // console.log(route)
@@ -21,7 +20,7 @@ export default function UtilisateurView() {
             <Image style={styles.albumCover} source={{ uri: 'https://static.750g.com/images/1200-630/0ed2e88c83811daea7c60e278de11b08/adobestock-28409562.jpeg' }} />
           </View> */}
           <View style={styles.parolesContainer}>
-            <GetUtilisateur pseudo = {pseudo}></GetUtilisateur>
+            <GetProfil pseudo = {pseudo}></GetProfil>
           </View>
         </ScrollView>
       );
