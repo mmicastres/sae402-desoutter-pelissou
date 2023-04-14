@@ -26,9 +26,7 @@ export default function TitreView() {
           </View>
           <View>
           </View>
-          <View style={styles.parolesContainer}>
             <Text style={styles.paroles}>{paroles}</Text>
-          </View>
         </ScrollView>
       );
     }

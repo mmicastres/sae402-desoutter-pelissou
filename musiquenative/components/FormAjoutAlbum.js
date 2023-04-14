@@ -69,7 +69,7 @@ export default function FormulaireAjoutAlbum(props) {
 
 
     return (
-        <View>
+        <View style={styles.container}>
             <TextInput
                 style={styles.input}
                 required
@@ -104,7 +104,7 @@ export default function FormulaireAjoutAlbum(props) {
                 onChangeText={setPochette}
             />
 
-            <Picker
+            <Picker style={styles.select}
                         selectedValue={nom_categorie}
                         onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
                     >   
@@ -127,94 +127,44 @@ export default function FormulaireAjoutAlbum(props) {
     );
 }
 const styles = StyleSheet.create({
+    select :{
+        margin:10
+    },
     container: {
-        width: '80%',
-        backgroundColor: '#FFFFFF',
-        borderRadius: 10,
-        padding: 20,
-        alignItems: 'center',
-    },
-    title: {
-        fontSize: 20,
-        fontWeight: 'bold',
-        marginBottom: 20,
-        color: '#333333',
-    },
-    inputContainer: {
-        width: '100%',
-        marginBottom: 20,
+      flex: 1,
+      justifyContent: 'center',
+      margin: 10,
+      borderRadius:15,
+      alignItems: 'center',
+      backgroundColor: '#fff',
+      padding: 20,
     },
     input: {
-        height: 50,
-        backgroundColor: '#F0F0F0',
-        borderRadius: 10,
-        padding: 10,
-        marginBottom: 10,
-        color: '#444444',
+      height: 40,
+      borderColor: 'gray',
+      borderWidth: 1,
+      borderRadius: 5,
+      paddingHorizontal: 10,
+      marginBottom: 20,
     },
-    buttonContainer: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        width: '100%',
+    picker: {
+      height: 40,
+      width: '100%',
+      borderWidth: 1,
+      borderRadius: 5,
+      marginBottom: 20,
     },
     button: {
-        backgroundColor: '#FFFFFF',
-        borderColor: '#333333',
-        borderWidth: 2,
-        borderRadius: 10,
-        padding: 10,
-        alignItems: 'center',
-        flex: 1,
-        marginLeft: 10,
-    },
-    registerButton: {
-        backgroundColor: '#333333',
-        borderColor: '#333333',
-        borderWidth: 2,
-        marginLeft: 0,
+      borderRadius: 5,
+      backgroundColor: '#000',
+      height: 40,
+      width: '100%',
+      justifyContent: 'center',
+      alignItems: 'center',
     },
     buttonText: {
-        color: '#333333',
-        fontSize: 18,
-        fontWeight: 'bold',
+      color: '#fff',
+      fontWeight: 'bold',
+      fontSize: 16,
     },
-    registerButtonText: {
-        color: '#FFFFFF',
-    },
-    selectContainer: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginVertical: 10,
-    },
-    selectplaceholder: {
-        fontSize: 16,
-        fontWeight: 'bold',
-        marginRight: 10,
-    },
-    selectButton: {
-        backgroundColor: '#FFF',
-        borderRadius: 10,
-        paddingVertical: 8,
-        paddingHorizontal: 12,
-        borderWidth: 1,
-        borderColor: '#000',
-        marginRight: 10,
-    },
-    selectButtonSelected: {
-        backgroundColor: '#F0FFF0',
-        borderRadius: 10,
-        paddingVertical: 8,
-        paddingHorizontal: 12,
-        marginRight: 10,
-    },
-    selectButtonText: {
-        color: '#000',
-        fontSize: 16,
-        fontWeight: 'bold',
-    },
-    selectButtonTextSelected: {
-        color: '#FFF',
-        fontSize: 16,
-        fontWeight: 'bold',
-    },
-});
+  });

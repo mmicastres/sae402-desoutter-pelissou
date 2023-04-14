@@ -8,10 +8,9 @@ import { useState, useEffect } from 'react';
 import AlbumCard from './AlbumCard';
 import AlbumCommentaires from './AlbumsCommentaires';
 
-import { UserContext } from '../App';
 
 export default function GetUtilisateur(data) {
-    console.log(data);
+    console.log(data.pseudo);
     const [utilisateur, setUtilisateur] = useState([])
     const [artiste,setArtiste] = useState([])
     const [commentaire,setCommentaire] = useState([])
