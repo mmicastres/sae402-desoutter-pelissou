@@ -6,7 +6,7 @@ import AlbumCard from './AlbumCard';
 import FormConnexion from './FormConnexion';
 import React from "react";
 import { useState, useEffect } from 'react';
-import { UserContext } from '../App';
+import { UserContext, admin, utilisateur } from '../App';
 import { useNavigation } from '@react-navigation/native';
 
 
@@ -14,14 +14,17 @@ const value = React.createContext(UserContext);
 // console.log(value);
 // let value = React.useContext(UserContext);
 
-export default function AlbumAccueil() {
-    const value = React.useContext(UserContext);
-    console.log(value.admin)
-    // value.admin = "ufieuf"
-    // console.log(value);
-    const [utilisateur, setUtilisateur] = useState("")
+export default function ConnexionAccueil() {
     const navigation = useNavigation();
-
+    const value = React.useContext(UserContext);
+    
+    const [utilisateur, setUtilisateur] = useState({})
+    value.changeUtilisateur = (verifAdmin, pseudo) => {
+        value.admin = verifAdmin
+        value.pseudo = pseudo
+        console.log(value)
+        navigation.replace("Accueil");
+    }
 
     function handlerUtilisateur(data) {
         const url = `https://sae301.alwaysdata.net/api/connexion`;
@@ -41,21 +44,16 @@ export default function AlbumAccueil() {
             .then((dataJSON) => {
                 console.log(dataJSON)
                 setUtilisateur(dataJSON)
-                // console.log(dataJSON.pseudo)
-                value.pseudo = dataJSON.pseudo
-                value.admin = dataJSON.admin
-                console.log(value)
-                navigation.replace("Accueil");
-                
-                
-
+                value.changeUtilisateur(dataJSON.admin, dataJSON.pseudo)
             })
             .catch((error) => console.log(error));
     }
+    
 
     return (
         <View >
             <FormConnexion handlerUtilisateur={handlerUtilisateur} ></FormConnexion>
+            {/* <Text>{utilisateur.pseudo}</Text> */}
         </View>
     )
 }

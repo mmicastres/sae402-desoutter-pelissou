@@ -16,7 +16,10 @@ import { Ionicons } from '@expo/vector-icons';
 import { useState, useEffect } from 'react';
 
 
-export const UserContext = React.createContext({pseudo: '', admin: ''});
+export const UserContext = React.createContext({
+  pseudo: '0', admin: '0',
+  changeUtilisateur: () => { }
+});
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -45,139 +48,69 @@ function ConnexionTabNavigator() {
 }
 
 export default function App() {
-  React.useContext(UserContext);
+  const value = React.useContext(UserContext);
 
-  const [connecte, setConnecte] = useState("0");
-  useEffect(() =>
-  setConnecte(UserContext.admin)
-  )
-  console.log(UserContext._currentValue.admin)
-  // if (connecte == 0){
+  const [admine, setAdmin] = useState(false);
+
+  function actualise(){
+    setAdmin(true)
+    console.log("JACTUALISE")
+  }
+
+  // const { value } = useContext(UserContext);
+
+
+
+  // const [connecte, setConnecte] = useState("0");
+  // useEffect(() =>
+  //   setConnecte(UserContext.admin)
+  // )
+  // console.log(UserContext._currentValue.admin)
+  // if (value.admin == 0){
   return (
-    // <UserContext.Provider value={connecte}>
-    <NavigationContainer>
-      <Tab.Navigator
-        screenOptions={{
-          tabBarStyle: { position: 'absolute', backgroundColor: '#EADDFF' },
-        }}>
-        <Tab.Screen
-          name="Accueil"
-          component={MainTabNavigator}
-          options={{
-            headerShown: false,
-            tabBarLabel: 'Accueil',
-            tabBarIcon: ({ size }) => (
-              <Ionicons name="home" color="black" size={size} />
-            ),
-          }} />
-        <Tab.Screen
-          name="Recherche"
-          component={RechercheView}
-          options={{
-            headerShown: false,
-            tabBarLabel: 'Recherche',
-            tabBarIcon: ({ size }) => (
-              <Ionicons name="search" color="black" size={size} />
-            ),
-          }}
-        />
-        <Tab.Screen
-          name="Connexion"
-          component={ConnexionTabNavigator} options={{
-            headerShown: false,
-            tabBarLabel: 'Profil',
-            tabBarIcon: ({ size }) => (
-              <Ionicons name="person" color="black" size={size} />
-            ),
-          }} />
+    <UserContext.Provider value={value}>
+      <NavigationContainer>
+        <UserContext.Consumer>
+          {value => (
+            <Tab.Navigator
+              screenOptions={{
+                tabBarStyle: { position: 'absolute', backgroundColor: '#EADDFF' },
+              }}>
+              <Tab.Screen
+                name="Accueil"
+                component={MainTabNavigator}
+                options={{
+                  headerShown: false,
+                  tabBarLabel: 'Accueil',
+                  tabBarIcon: ({ size }) => (
+                    <Ionicons name="home" color="black" size={size} />
+                  ),
+                }} />
+              <Tab.Screen
+                name='Recherche'
+                component={RechercheView}
+                options={{
+                  headerShown: false,
+                  tabBarLabel: `${value.admin}`,
+                  tabBarIcon: ({ size }) => (
+                    <Ionicons name="search" color="black" size={size} />
+                  ),
+                }}
+              />
+              <Tab.Screen
+                name="Connexion"
+                component={ConnexionTabNavigator} options={{
+                  headerShown: false,
+                  tabBarLabel: 'Profil',
+                  tabBarIcon: ({ size }) => (
+                    <Ionicons name="person" color="black" size={size} />
+                  ),
+                }} />
 
-        </Tab.Navigator>
-    </NavigationContainer>
-    // </UserContext.Provider>
+            </Tab.Navigator>
+          )}
+        </UserContext.Consumer>
+      </NavigationContainer>
+    </UserContext.Provider>
   );
-// }else{
-//   return (
-//     <UserContext.Provider value={connecte}>
-//     <NavigationContainer>
-//       <Tab.Navigator
-//         screenOptions={{
-//           tabBarStyle: { position: 'absolute', backgroundColor:'#EADDFF' },
-//         }}>
-//         <Tab.Screen
-//           name="Accueil"
-//           component={MainTabNavigator}
-//           options={{
-//             headerShown: false,
-//             tabBarLabel: 'Accueil',
-//             tabBarIcon: ({size }) => (
-//               <Ionicons name="home" color="black" size={size} />
-//             ),
-//           }} />
-//         <Tab.Screen
-//           name="Recherche"
-//           component={RechercheView}
-//           options={{
-//             headerShown: false,
-//             tabBarLabel: 'Recherche',
-//             tabBarIcon: ({size }) => (
-//               <Ionicons name="search" color="black" size={size} />
-//             ),
-//           }}
-//         />
-//         <Tab.Screen
-//           name="Connexion"
-//           component={ConnexionView} options={{
-//             headerShown: false,
-//             tabBarLabel: 'Profil',
-//             tabBarIcon: ({size }) => (
-//               <Ionicons name="person" color="black" size={size}/>
-//             ),
-//           }} />
-//       </Tab.Navigator>
-//     </NavigationContainer>
-//     </UserContext.Provider>
-//   );
-// }
 }
-// if (value.admin == 1){
-//   return(
-//   <NavigationContainer>
-//     <Tab.Navigator
-//       screenOptions={{
-//         tabBarStyle: { position: 'absolute', backgroundColor:'#EADDFF' },
-//       }}>
-//       <Tab.Screen
-//         name="Accueil"
-//         component={MainTabNavigator}
-//         options={{
-//           headerShown: false,
-//           tabBarLabel: 'Accueil',
-//           tabBarIcon: ({size }) => (
-//             <Ionicons name="home" color="black" size={size} />
-//           ),
-//         }} />
-//       <Tab.Screen
-//         name="Recherche"
-//         component={RechercheView}
-//         options={{
-//           headerShown: false,
-//           tabBarLabel: 'Recherche',
-//           tabBarIcon: ({size }) => (
-//             <Ionicons name="search" color="black" size={size} />
-//           ),
-//         }}
-//       />
-//       <Tab.Screen
-//         name="Connexion"
-//         component={ConnexionView} options={{
-//           headerShown: false,
-//           tabBarLabel: 'Administrer',
-//           tabBarIcon: ({size }) => (
-//             <Ionicons name="person" color="black" size={size}/>
-//           ),
-//         }} />
-//     </Tab.Navigator>
-//   </NavigationContainer>
-
-// );
-
