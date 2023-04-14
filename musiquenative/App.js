@@ -68,7 +68,7 @@ export default function App() {
   //   setConnecte(UserContext.admin)
   // )
   // console.log(UserContext._currentValue.admin)
-  // if (value.admin == 0){
+  if (value.admin == 0){
   return (
     <UserContext.Provider value={value}>
       <NavigationContainer>
@@ -76,6 +76,9 @@ export default function App() {
           {value => (
             <Tab.Navigator
               screenOptions={{
+
+                tabBarActiveBackgroundColor:'#c8aef2',
+                tabBarActiveTintColor:'black',
                 tabBarStyle: { position: 'absolute', backgroundColor: '#EADDFF' },
               }}>
               <Tab.Screen
@@ -115,4 +118,43 @@ export default function App() {
       </NavigationContainer>
     </UserContext.Provider>
   );
+  }
+  else{
+    return (
+      <UserContext.Provider value={value}>
+        <NavigationContainer>
+          <UserContext.Consumer>
+            {value => (
+              <Tab.Navigator
+                screenOptions={{
+                  tabBarStyle: { position: 'absolute', backgroundColor: '#EADDFF' },
+                }}>
+                <Tab.Screen
+                  name="Accueil"
+                  component={MainTabNavigator}
+                  options={{
+                    headerShown: false,
+                    tabBarLabel: 'Accueil',
+                    tabBarIcon: ({ size }) => (
+                      <Ionicons name="home" color="black" size={size} />
+                    ),
+                  }} />
+      
+                <Tab.Screen
+                  name="Connexion"
+                  component={ConnexionTabNavigator} options={{
+                    headerShown: false,
+                    tabBarLabel: 'Profil',
+                    tabBarIcon: ({ size }) => (
+                      <Ionicons name="person" color="black" size={size} />
+                    ),
+                  }} />
+  
+              </Tab.Navigator>
+            )}
+          </UserContext.Consumer>
+        </NavigationContainer>
+      </UserContext.Provider>
+    )
+  }
 }
