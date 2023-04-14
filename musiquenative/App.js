@@ -96,7 +96,7 @@ export default function App() {
                 component={RechercheView}
                 options={{
                   headerShown: false,
-                  tabBarLabel: `${value.admin}`,
+                  tabBarLabel: `Recherche`,
                   tabBarIcon: ({ size }) => (
                     <Ionicons name="search" color="black" size={size} />
                   ),
