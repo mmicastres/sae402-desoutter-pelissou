@@ -37,11 +37,11 @@ export default function AccueilView() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'pink',
+        backgroundColor: 'white',
     },
     textStyle: {
         width: '100%',
-        backgroundColor: 'yellow',
+        // backgroundColor: 'yellow',
         alignItems: 'left',
         fontSize: 20,
         fontWeight: 'bold',
