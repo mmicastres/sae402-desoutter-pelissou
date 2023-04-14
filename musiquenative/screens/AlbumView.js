@@ -4,6 +4,9 @@ import * as React from 'react';
 import { useRoute } from '@react-navigation/native';
 import ListeTitresAlbum from '../components/ListeTitresAlbum';
 import ListeComsAlbums from '../components/ListeComsAlbum';
+import AjoutTitreAcceuil from '../components/AjoutTitreAccueil';
+import AjoutComAccueil from '../components/AjoutComAccueil';
+
 
 export default function AlbumView() {
     const route = useRoute();
@@ -21,7 +24,9 @@ export default function AlbumView() {
                 }}
             />
             <ListeTitresAlbum id_album = {id}></ListeTitresAlbum>
+            <AjoutTitreAcceuil id_album = {id}></AjoutTitreAcceuil>
             <ListeComsAlbums id_album = {id}></ListeComsAlbums>
+            <AjoutComAccueil id_album={id}></AjoutComAccueil>
         </View>
     )
 }

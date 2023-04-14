@@ -4,6 +4,7 @@ import * as React from 'react';
 import { useRoute } from '@react-navigation/native';
 import ListeTitresAlbum from '../components/ListeTitresAlbum';
 import ListeComsAlbums from '../components/ListeComsAlbum';
+import AjoutAnecdoteAccueil from '../components/AjoutAnecdoteAccueil';
 import { useState, useEffect } from 'react';
 
 export default function GetAnecdote(data) {
@@ -30,13 +31,16 @@ export default function GetAnecdote(data) {
         getRecherche()
         }, [data])
 
+        console.log(anecdote.length)
 
         if(anecdote.length != 0){
             return(
+                <View>
                 <Text>{anecdote.contenu}</Text>
+                <AjoutAnecdoteAccueil idtitre = {data.idtitre}></AjoutAnecdoteAccueil>
+                </View>
             )
         }
-    
 }
 
 

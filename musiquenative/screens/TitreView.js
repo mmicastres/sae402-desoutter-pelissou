@@ -6,11 +6,12 @@ import ListeTitresAlbum from '../components/ListeTitresAlbum';
 import ListeComsAlbums from '../components/ListeComsAlbum';
 import GetAnecdote from '../components/GetAnecdote';
 
+
 export default function TitreView() {
     const route = useRoute();
     const id = route.params.id;
     const titre = route.params.titre;
-    const paroles = route.params.titre;
+    const paroles = route.params.paroles;
     // console.log(route)
     return (
         <ScrollView style={styles.container}>
@@ -22,6 +23,8 @@ export default function TitreView() {
           </View>
           <View style={styles.parolesContainer}>
             <GetAnecdote idtitre = {id}></GetAnecdote>
+          </View>
+          <View>
           </View>
           <View style={styles.parolesContainer}>
             <Text style={styles.paroles}>{paroles}</Text>

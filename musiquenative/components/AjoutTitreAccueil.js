@@ -3,18 +3,44 @@ import { Link } from '@react-navigation/native';
 //    import { Card, ListItem, Button, Icon } from 'react-native-elements'
 import { Card } from '@rneui/themed';
 import AlbumCard from './AlbumCard';
-import FormulaireAjoutAlbum from './FormAjoutAlbum';
+import FormAjoutTitre from './FormAjoutTitre';
 import React from "react";
 import { useState, useEffect } from 'react';
 import UserContext from '../Contexte';
 import { createContext } from 'react';
 
 
-export default function AjoutAlbumAccueil() {
+export default function AjoutTitreAccueil(id) {
+    console.log(id.id_album)
+    const [artiste, setArtiste] = useState([])
+    
+
+    function getArtiste(){
+        const url =
+            `https://sae301.alwaysdata.net/api/albums/${id.id_album}`;
+        const fetchOptions = {
+            method: "GET"
+        };
+        fetch(url, fetchOptions)
+            .then((response) => {
+                return response.json();
+            })
+            .then((dataJSON) => {
+                // console.log(dataJSON);
+                setArtiste(dataJSON);
+            })
+            .catch((error) => console.log(error));
+    }
+    useEffect(() => {
+        getArtiste()
+    }, [id])
+    
+
+    console.log(artiste.pseudo);
 
     function handlerUtilisateur(data) {
-        const url = `https://sae301.alwaysdata.net/api/albums`;
-
+        
+        const url = `https://sae301.alwaysdata.net/api/artistes/${artiste.pseudo}/albums/${id.id_album}/titres`;
 
         let myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
@@ -40,8 +66,8 @@ export default function AjoutAlbumAccueil() {
 
     return (
         <View >
-            <Text>Ajouter un Album</Text>
-            <FormulaireAjoutAlbum handlerUtilisateur={handlerUtilisateur} ></FormulaireAjoutAlbum>
+            <Text>Ajouter un Titre</Text>
+            <FormAjoutTitre handlerUtilisateur={handlerUtilisateur} id={id.id_album} pseudo={artiste.pseudo} pochette={artiste.pochette}></FormAjoutTitre>
         </View>
     )
 }

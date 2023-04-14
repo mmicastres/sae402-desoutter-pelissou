@@ -3,8 +3,7 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import AlbumAccueil from '../components/AlbumsAccueil';
-import FormulaireAjoutAlbum from '../components/AjoutAlbumAccueil';
+import AjoutAlbumAccueil from '../components/AjoutAlbumAccueil';
 import { useEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
 
@@ -15,7 +14,7 @@ export default function AccueilView() {
     return (
         <View style={styles.container}>
             <Text style={styles.textStyle}>Les derniers albums : </Text>
-            <FormulaireAjoutAlbum></FormulaireAjoutAlbum>
+            <AjoutAlbumAccueil></AjoutAlbumAccueil>
         </View>
     )
 }

@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import AlbumAccueil from '../components/AlbumsAccueil';
 import BoutonNavAjout from '../components/ButtontoAjoutAlbum';
+import BoutonProfilUtili from '../components/BoutonProfilUtili';
 import { useEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { UserContext } from '../App';
@@ -20,6 +21,7 @@ export default function AccueilView() {
             <Text style={styles.textStyle}>Les derniers albums : </Text>
             <AlbumAccueil></AlbumAccueil>
             <BoutonNavAjout></BoutonNavAjout>
+            <BoutonProfilUtili></BoutonProfilUtili>
         </View>
     )
     }else{

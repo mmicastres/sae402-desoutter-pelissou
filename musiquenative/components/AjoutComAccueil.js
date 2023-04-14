@@ -3,18 +3,16 @@ import { Link } from '@react-navigation/native';
 //    import { Card, ListItem, Button, Icon } from 'react-native-elements'
 import { Card } from '@rneui/themed';
 import AlbumCard from './AlbumCard';
-import FormulaireAjoutAlbum from './FormAjoutAlbum';
+import FormAjoutCom from './FormAjoutCom';
 import React from "react";
-import { useState, useEffect } from 'react';
-import UserContext from '../Contexte';
-import { createContext } from 'react';
 
 
-export default function AjoutAlbumAccueil() {
-
+export default function AjoutComAccueil(id) {
+    console.log(id.id_album)
+    
     function handlerUtilisateur(data) {
-        const url = `https://sae301.alwaysdata.net/api/albums`;
-
+        
+        const url = `https://sae301.alwaysdata.net/api/albums/${id.id_album}/commentaires`;
 
         let myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
@@ -40,8 +38,8 @@ export default function AjoutAlbumAccueil() {
 
     return (
         <View >
-            <Text>Ajouter un Album</Text>
-            <FormulaireAjoutAlbum handlerUtilisateur={handlerUtilisateur} ></FormulaireAjoutAlbum>
+            <Text>Ajouter un Commentaire</Text>
+            <FormAjoutCom handlerUtilisateur={handlerUtilisateur}></FormAjoutCom>
         </View>
     )
 }
